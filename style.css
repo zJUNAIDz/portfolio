@@ -5,7 +5,6 @@
   padding: 0;
   /* border: 2px solid black; */
   font-family: "Ubuntu", Georgia, Times, serif;
-
 }
 body {
   /* border: solid 1px rgb(61, 255, 18); */
@@ -118,16 +117,15 @@ body {
   justify-content: center;
 }
 .section-text-p1,
-#education .title {
+ .title {
   text-align: center;
-
 }
 .section-text-p1 {
   font-weight: 500;
-  color: #383838;
+  color: #575757;
   font-size: 1rem;
 }
-#education .title{
+ .title {
   font-size: 2.5rem;
 }
 .education-paragraph-list {
@@ -137,17 +135,65 @@ body {
   margin-top: 1rem;
 }
 
-
-.education-content{
+.education-content {
   margin-top: 2rem;
 }
 
-
-.course-name-container{
+.course-name-container {
   display: flex;
   justify-content: space-between;
 }
 
-.course-description-list-container li{
-  margin: .5rem 1rem;
+.course-description-list-container li {
+  margin: 0.5rem 1rem;
+}
+
+/* Skills Section */
+#skills *{
+  /* border: 1px solid black; */
+
+}
+#skills {
+  margin:3rem 5rem;
+  height: 70vh;
+}
+.cards-wrapper{
+  display: flex;
+  justify-content: space-around;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.card{
+  height: 40%;
+  width: 48%;
+  border: 3px solid rgb(104, 104, 104);
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.card-title{
+  border-bottom:1px solid #383838;
+  padding-bottom: 1rem;
+  text-align: center;
+
+}
+
+.card-list-wrapper{
+  display: flex;
+  justify-content: space-evenly;
+  
+}
+.card-list{
+  width: 40%;
+  justify-content: start;
+}
+
+.skill-level{
+  color: #797979;
+}
+.card-list li{
+  display: flex;
+  justify-content: space-between;
+  margin:5px;
 }
