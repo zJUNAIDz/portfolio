@@ -3,13 +3,19 @@
 * {
   margin: 0;
   padding: 0;
-  /* border: 2px solid black; */
+  /* border: 1px solid black; */
   font-family: "Ubuntu", Georgia, Times, serif;
 }
+
 body {
   /* border: solid 1px rgb(61, 255, 18); */
   height: 100vh;
   width: 100vw;
+  /* display: flex; */
+  flex-direction: column;
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* margin: 0 3rem;  */
 }
 .desktop-nav {
   font-family: "Ubuntu", Tahoma, Geneva, Verdana, sans-serif;
@@ -18,14 +24,13 @@ body {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  margin: 0 1rem;
   justify-content: space-between;
 }
 .mobile-nav {
   display: none;
 }
 
-.navigations {
-}
 .nav-list {
   list-style-type: none;
   display: flex;
@@ -92,8 +97,6 @@ body {
   background-color: #383838;
   color: #fff;
 }
-.links {
-}
 .link {
   height: 3.5rem;
   width: 3.5rem;
@@ -105,28 +108,27 @@ body {
 .github {
 }
 .linkedin {
+  color: #0086d4;
 }
 
 /* styling education section  */
-#education * {
-  /* border: 2px solid black; */
-}
 #education {
   margin: 10rem 10rem;
-  height: 70vh;
+  height: 50vh;
   justify-content: center;
 }
 .section-text-p1,
- .title {
+.title {
   text-align: center;
 }
 .section-text-p1 {
-  font-weight: 500;
-  color: #575757;
+  font-weight: 600;
+  color: #565656;
   font-size: 1rem;
 }
- .title {
+.title {
   font-size: 2.5rem;
+  margin-bottom: 2rem;
 }
 .education-paragraph-list {
   list-style-type: disc;
@@ -148,52 +150,90 @@ body {
   margin: 0.5rem 1rem;
 }
 
-/* Skills Section */
-#skills *{
-  /* border: 1px solid black; */
-
-}
 #skills {
-  margin:3rem 5rem;
-  height: 70vh;
+  height: 120vh;
+  margin: 2rem 10rem;
+  /* border: 3px solid green; */
 }
-.cards-wrapper{
+#skills,
+#skills * {
+  /* border: 1px solid black; */
+}
+
+.skills-wrapper {
   display: flex;
-  justify-content: space-around;
-  /* justify-content: center; */
+  justify-content: center;
+}
+
+.skill {
+  display: flex;
   align-items: center;
+  justify-content: center;
+  margin: 1rem 2rem;
+}
+.skill img {
+  margin-right: 1rem;
+  font-size: 3rem;
+}
+.skill {
+  font-size: 1rem;
 }
 
-.card{
-  height: 40%;
-  width: 48%;
-  border: 3px solid rgb(104, 104, 104);
-  border-radius: 10px;
-  margin-bottom: 1rem;
+.skills-wrapper-1,
+.skills-wrapper-2 {
+  width: 50%;
 }
 
-.card-title{
-  border-bottom:1px solid #383838;
-  padding-bottom: 1rem;
-  text-align: center;
-
+.progress-bar {
+  height: 0.9rem;
+  width: 90%;
+  border-radius: 20px;
+  border: 1px solid black;
 }
 
-.card-list-wrapper{
-  display: flex;
-  justify-content: space-evenly;
-  
-}
-.card-list{
-  width: 40%;
-  justify-content: start;
+.progress-bar-filled {
+  height: inherit;
+  border-radius: inherit;
 }
 
-.skill-level{
-  color: #797979;
+/* Different styles for each progress bar */
+.p-b-html {
+  width: 90%;
+  background-color: #ff6d00;
 }
-.card-list li{
-  display: flex;
-  justify-content: space-between;
-  margin:5px;
+.p-b-css {
+  width: 70%;
+  background-color: #0277bd;
+}
+.p-b-js {
+  width: 80%;
+  background-color: #ffd600;
+}
+.p-b-ts {
+  width: 50%;
+  background-color: #1976d2;
+}
+.p-b-jq {
+  width: 30%;
+  background-color: #1467a9;
+}
+.p-b-react {
+  width: 80%;
+  background-color: #53c1de;
+}
+.p-b-cpp {
+  width: 60%;
+  background-color: #0086d4;
+}
+.p-b-py {
+  width: 50%;
+  background-color: #ffc107;
+}
+.p-b-node {
+  width: 20%;
+  background-color: #21a366;
+}
+.p-b-mongodb {
+  width: 30%;
+  background-color: #5d4037;
 }
