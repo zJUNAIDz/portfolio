@@ -109,8 +109,7 @@ body {
   text-decoration: none;
   color: black;
 }
-.github {
-}
+
 .linkedin {
   color: #0086d4;
 }
@@ -158,10 +157,6 @@ body {
   height: 90vh;
   margin: 2rem 10rem;
   /* border: 3px solid green; */
-}
-#skills,
-#skills * {
-  /* border: 1px solid black; */
 }
 
 .skills-wrapper {
