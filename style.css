@@ -105,6 +105,10 @@ body {
 .linkedin {
   margin: 0.5rem;
 }
+.intro button a {
+  text-decoration: none;
+  color: black;
+}
 .github {
 }
 .linkedin {
