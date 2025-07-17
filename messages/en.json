@@ -1,0 +1,63 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Junaid",
+    "title": "Full-Stack Software Developer",
+    "subtitle": "I try to build programs that might break in production, but yo! someone has to do that.",
+    
+    "cta": "Get In Touch",
+    "downloadCv": "Download CV"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I'm a Full-Stack software developer with an interest for building silly programs that might break in production, but yo! someone has to be silly. I love exploring Linux distributions, studying Japanese language and culture.",
+    "interests": [
+      "System Architecture",
+      "Froentend Development",
+      "API Design",
+      "Database Optimization",
+      "Linux Systems",
+      "Japanese Language",
+      "Open Source"
+    ]
+  },
+  "skills": {
+    "title": "Technical Skills",
+    "categories": {
+      "backendLanguages": "Backend Programming Languages",
+      "webFrameworks": "Web Frameworks & Runtime Environments",
+      "databases": "Database Systems & Storage",
+      "cloudDevOps": "Cloud Infrastructure & DevOps",
+      "systemsTools": "Development Tools & Systems",
+      "operatingSystems": "Operating Systems & Distributions"
+    }
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "viewProject": "View Project",
+    "viewCode": "View Code",
+    "techStack": "Tech Stack"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "description": "I'm always interested in new opportunities and collaborations. Feel free to reach out!",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "location": "Location"
+  },
+  "common": {
+    "darkMode": "Dark Mode",
+    "lightMode": "Light Mode",
+    "language": "Language",
+    "english": "English",
+    "japanese": "Japanese"
+  }
+}
