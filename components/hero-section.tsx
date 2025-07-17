@@ -1,15 +1,12 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useTranslations } from "next-intl"
 import { Download, Mail, Github, Linkedin, Terminal } from "lucide-react"
 import { Button } from "./ui/button"
 import { Badge } from "./ui/badge"
 import Link from "next/link"
 
 export function HeroSection() {
-  const t = useTranslations()
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -46,7 +43,7 @@ export function HeroSection() {
         >
           <motion.div variants={itemVariants} className="mb-6">
             <Badge variant="secondary" className="mb-4">
-              {t("hero.greeting")}
+              Welcome to my portfolio
             </Badge>
           </motion.div>
 
@@ -54,21 +51,21 @@ export function HeroSection() {
             variants={itemVariants}
             className="text-6xl md:text-8xl font-bold mb-1 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary leading-relaxed"
           >
-            {t("hero.name")}
+            Junaid
           </motion.h1>
 
           <motion.h2
             variants={itemVariants}
             className="text-2xl md:text-4xl font-light mb-6 text-muted-foreground"
           >
-            {t("hero.title")}
+            Backend Software Engineer
           </motion.h2>
 
           <motion.p
             variants={itemVariants}
             className="text-lg md:text-xl mb-8 text-muted-foreground max-w-2xl mx-auto leading-relaxed"
           >
-            {t("hero.subtitle")}
+            Crafting robust, scalable backend solutions with expertise in microservices, cloud architecture, and high-performance systems.
           </motion.p>
 
           {/* <motion.p
@@ -84,12 +81,12 @@ export function HeroSection() {
           >
             <Button size="lg" className="w-full sm:w-auto">
               <Mail className="w-4 h-4 mr-2" />
-              {t("hero.cta")}
+              Get In Touch
             </Button>
             <Link target="_blank" href="https://drive.google.com/file/d/1pOkrEd4tO05OfRcXLzThkmSxAeV0seZP/view?usp=sharing">
               <Button variant="outline" size="lg" className="w-full sm:w-auto">
                 <Download className="w-4 h-4 mr-2" />
-                {t("hero.downloadCv")}
+                Download CV
               </Button>
             </Link>
           </motion.div>

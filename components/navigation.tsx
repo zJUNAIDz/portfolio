@@ -2,26 +2,14 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Moon, Sun, Languages, Menu, X } from "lucide-react"
-import { useTranslations } from "next-intl"
+import { Moon, Sun, Menu, X } from "lucide-react"
 import { useTheme } from "./theme-provider"
 import { Button } from "./ui/button"
-import { 
-  DropdownMenu, 
-  DropdownMenuContent, 
-  DropdownMenuItem, 
-  DropdownMenuTrigger 
-} from "./ui/dropdown-menu"
 
-interface NavigationProps {
-  locale: string
-}
-
-export function Navigation({ locale }: NavigationProps) {
+export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const { theme, setTheme } = useTheme()
-  const t = useTranslations()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,16 +20,19 @@ export function Navigation({ locale }: NavigationProps) {
   }, [])
 
   const navItems = [
-    { key: "home", href: "#home" },
-    { key: "about", href: "#about" },
-    { key: "skills", href: "#skills" },
-    { key: "projects", href: "#projects" },
-    { key: "contact", href: "#contact" },
+    { key: "about", href: "#about", label: "About" },
+    { key: "experience", href: "#experience", label: "Experience" },
+    { key: "skills", href: "#skills", label: "Skills" },
+    { key: "projects", href: "#projects", label: "Projects" },
+    { key: "contact", href: "#contact", label: "Contact" },
   ]
 
-  const toggleLanguage = () => {
-    const newLocale = locale === "en" ? "ja" : "en"
-    window.location.href = `/${newLocale}`
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+    }
+    setIsOpen(false)
   }
 
   return (
@@ -66,14 +57,14 @@ export function Navigation({ locale }: NavigationProps) {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               {navItems.map((item) => (
-                <motion.a
+                <motion.button
                   key={item.key}
-                  href={item.href}
+                  onClick={() => scrollToSection(item.href)}
                   whileHover={{ y: -2 }}
                   className="text-sm font-medium hover:text-primary transition-colors"
                 >
-                  {t(`navigation.${item.key}`)}
-                </motion.a>
+                  {item.label}
+                </motion.button>
               ))}
             </div>
 
@@ -89,21 +80,6 @@ export function Navigation({ locale }: NavigationProps) {
                 <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
                 <span className="sr-only">Toggle theme</span>
               </Button>
-
-              {/* Language Toggle */}
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="icon">
-                    <Languages className="h-4 w-4" />
-                    <span className="sr-only">Change language</span>
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent>
-                  <DropdownMenuItem onClick={toggleLanguage}>
-                    {locale === "en" ? "日本語" : "English"}
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
 
               {/* Mobile Menu Toggle */}
               <Button
@@ -130,15 +106,14 @@ export function Navigation({ locale }: NavigationProps) {
               <div className="container mx-auto px-4 py-4">
                 <div className="flex flex-col space-y-4">
                   {navItems.map((item) => (
-                    <motion.a
+                    <motion.button
                       key={item.key}
-                      href={item.href}
+                      onClick={() => scrollToSection(item.href)}
                       whileHover={{ x: 4 }}
-                      onClick={() => setIsOpen(false)}
-                      className="text-sm font-medium hover:text-primary transition-colors"
+                      className="text-sm font-medium hover:text-primary transition-colors text-left"
                     >
-                      {t(`navigation.${item.key}`)}
-                    </motion.a>
+                      {item.label}
+                    </motion.button>
                   ))}
                 </div>
               </div>

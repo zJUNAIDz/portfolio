@@ -1,40 +1,37 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useTranslations } from "next-intl"
 import { Mail, Github, Linkedin, MapPin, Send, Download } from "lucide-react"
 import { Card, CardContent, CardHeader } from "./ui/card"
 import { Button } from "./ui/button"
 import Link from "next/link"
 
 export function ContactSection() {
-  const t = useTranslations()
-
   const contactInfo = [
     {
       icon: Mail,
-      label: t("contact.email"),
+      label: "Email",
       value: "junaidshaikh3967@gmail.com",
       href: "mailto:junaidshaikh3967@gmail.com",
       color: "text-blue-500"
     },
     {
       icon: Github,
-      label: t("contact.github"),
+      label: "GitHub",
       value: "github.com/zjunaidz",
       href: "https://github.com/zjunaidz",
       color: "text-purple-500"
     },
     {
       icon: Linkedin,
-      label: t("contact.linkedin"),
+      label: "LinkedIn",
       value: "linkedin.com/in/zjunaidz",
       href: "https://linkedin.com/in/zjunaidz",
       color: "text-blue-600"
     },
     {
       icon: MapPin,
-      label: t("contact.location"),
+      label: "Location",
       value: "India",
       href: "#",
       color: "text-green-500"
@@ -52,10 +49,10 @@ export function ContactSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gradient">
-            {t("contact.title")}
+            Get In Touch
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            {t("contact.description")}
+            Let&apos;s discuss how we can work together to build something amazing. I&apos;m always open to new opportunities and interesting projects.
           </p>
         </motion.div>
 

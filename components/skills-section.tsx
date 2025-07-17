@@ -1,14 +1,11 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useTranslations } from "next-intl"
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
 import { Badge } from "./ui/badge"
 import { Code2, Globe, Database, Cloud, Wrench, Monitor } from "lucide-react"
 
 export function SkillsSection() {
-  const t = useTranslations()
-
   const skillCategories = {
     backendLanguages: [
       "TypeScript", "JavaScript", "Go", "Java", "C++"
@@ -30,6 +27,15 @@ export function SkillsSection() {
     ]
   }
 
+  const categoryConfig = {
+    backendLanguages: { icon: Code2, label: "Backend Languages" },
+    webFrameworks: { icon: Globe, label: "Web Frameworks" },
+    databases: { icon: Database, label: "Databases" },
+    cloudDevOps: { icon: Cloud, label: "Cloud & DevOps" },
+    systemsTools: { icon: Wrench, label: "Systems & Tools" },
+    operatingSystems: { icon: Monitor, label: "Operating Systems" }
+  }
+
   return (
     <section id="skills" className="py-20 bg-muted/30 relative">
       <div className="container mx-auto px-4">
@@ -41,7 +47,7 @@ export function SkillsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gradient">
-            {t("skills.title")}
+            Skills & Technologies
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Technologies and tools I use to build stuff
@@ -68,7 +74,7 @@ export function SkillsSection() {
                       {category === "systemsTools" && <Wrench size={24} />}
                       {category === "operatingSystems" && <Monitor size={24} />}
                     </span>
-                    {t(`skills.categories.${category}`)}
+                    {categoryConfig[category as keyof typeof categoryConfig].label}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>

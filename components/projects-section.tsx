@@ -1,14 +1,12 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useTranslations } from "next-intl"
 import { ExternalLink, Github, Rocket, Building2, BarChart3, Settings, FolderOpen, GitCommit, Code, Star } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
 import { Button } from "./ui/button"
 import { Badge } from "./ui/badge"
 
 export function ProjectsSection() {
-  const t = useTranslations()
 
   const projects = [
     {
@@ -59,7 +57,7 @@ export function ProjectsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gradient">
-            {t("projects.title")}
+            Featured Projects
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             A showcase of backend systems and infrastructure projects
@@ -131,7 +129,7 @@ export function ProjectsSection() {
                     <Button variant="outline" size="sm" asChild className="flex-1">
                       <a href={project.github} target="_blank" rel="noopener noreferrer">
                         <Github className="w-4 h-4 mr-2" />
-                        {t("projects.viewCode")}
+                        View Code
                       </a>
                     </Button>
                   </div>

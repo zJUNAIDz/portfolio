@@ -1,21 +1,18 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useTranslations } from "next-intl"
 import { Card, CardContent } from "./ui/card"
 import { Badge } from "./ui/badge"
 import { Rocket, Monitor, Zap, Wrench, MapPin } from "lucide-react"
 
 export function AboutSection() {
-  const t = useTranslations()
-
   const interests = [
-    "about.interests.0",
-    "about.interests.1",
-    "about.interests.2",
-    "about.interests.3",
-    "about.interests.4",
-    "about.interests.5"
+    "Distributed Systems",
+    "Cloud Architecture",
+    "Microservices",
+    "API Design",
+    "Performance Optimization",
+    "System Scalability"
   ]
 
   return (
@@ -29,11 +26,11 @@ export function AboutSection() {
           className="max-w-4xl mx-auto text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gradient">
-            {t("about.title")}
+            About Me
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-            {t("about.description")}
-          </p>
+          {/* <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+            Passionate Full-Stack Developer with 2+ years of experience building scalable, high-performance systems. I specialize in designing robust APIs, optimizing database performance, and architecting cloud-native solutions that handle millions of requests.
+          </p> */}
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -59,7 +56,7 @@ export function AboutSection() {
                       transition={{ duration: 0.3, delay: 0.1 * index }}
                     >
                       <Badge variant="secondary" className="text-sm">
-                        {t(interest)}
+                        {interest}
                       </Badge>
                     </motion.div>
                   ))}
