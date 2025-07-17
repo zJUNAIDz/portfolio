@@ -1,10 +1,10 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ExternalLink, Github, Rocket, Building2, BarChart3, Settings, FolderOpen, GitCommit, Code, Star } from "lucide-react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
-import { Button } from "./ui/button"
+import { BarChart3, Building2, ExternalLink, Github, Rocket, Settings } from "lucide-react"
 import { Badge } from "./ui/badge"
+import { Button } from "./ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
 
 export function ProjectsSection() {
 
