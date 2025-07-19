@@ -37,13 +37,14 @@ export function ExperienceSection() {
             >
               {/* Timeline line */}
               {index < experienceContent.experiences.length - 1 && (
-                <div className="absolute left-6 top-16 w-px h-24 bg-border" />
+                <>
+                  <div className="absolute left-6 top-16 w-px h-24 bg-border" />
+
+                  <div className="hidden md:block absolute md:left-4 top-8 w-4 h-4 bg-primary rounded-full border-4 border-background shadow-md" />
+                </>
               )}
-              
-              {/* Timeline dot */}
-              <div className="absolute left-4 top-8 w-4 h-4 bg-primary rounded-full border-4 border-background shadow-md" />
-              
-              <div className="ml-16">
+
+              <div className="md:ml-16">
                 <Card className="hover:shadow-md transition-shadow">
                   <CardHeader>
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -67,12 +68,12 @@ export function ExperienceSection() {
                       </div>
                     </div>
                   </CardHeader>
-                  
+
                   <CardContent className="space-y-6">
                     <p className="text-muted-foreground leading-relaxed">
                       {experience.description}
                     </p>
-                    
+
                     {/* Achievements */}
                     <div>
                       <h4 className="font-semibold mb-3 text-sm">Key Achievements:</h4>
@@ -85,7 +86,7 @@ export function ExperienceSection() {
                         ))}
                       </ul>
                     </div>
-                    
+
                     {/* Technologies */}
                     <div>
                       <h4 className="font-semibold mb-3 text-sm">Technologies Used:</h4>
