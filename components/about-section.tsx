@@ -35,7 +35,7 @@ export function AboutSection() {
           >
             <Card>
               <CardContent className="p-8">
-                <h3 className="text-2xl font-semibold mb-6">What I Focus On</h3>
+                <h3 className="text-2xl font-semibold mb-6">What I am Learning</h3>
                 <div className="flex flex-wrap gap-3">
                   {aboutContent.interests.map((interest, index) => (
                     <motion.div

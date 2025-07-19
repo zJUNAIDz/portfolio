@@ -76,7 +76,7 @@ export const skillsContent = {
     backendLanguages: {
       label: "Backend Languages",
       icon: Code2,
-      skills: ["TypeScript", "JavaScript", "Go", "Java", "C++"],
+      skills: ["TypeScript", "JavaScript", "Go", "Core Java", "Basic C++"],
     },
     webFrameworks: {
       label: "Web Frameworks",
@@ -87,6 +87,7 @@ export const skillsContent = {
         "Next.js",
         "Express.js",
         "Hono.js",
+        "Elysia.js",
         "Gin",
       ],
     },
@@ -98,17 +99,17 @@ export const skillsContent = {
     cloudDevOps: {
       label: "Cloud & DevOps",
       icon: Cloud,
-      skills: ["AWS", "Docker"],
+      skills: ["Basic AWS", "Docker"],
     },
     systemsTools: {
       label: "Systems & Tools",
       icon: Wrench,
-      skills: ["Linux", "Git", "Bash", "Postman", "Burp Suite"],
+      skills: ["Git", "Bash", "Postman", "Burp Suite"],
     },
     operatingSystems: {
       label: "Operating Systems",
       icon: Monitor,
-      skills: ["Ubuntu", "Fedora", "Debian"],
+      skills: ["Ubuntu", "Fedora", "Windows"],
     },
   },
 };
@@ -151,7 +152,7 @@ export const experienceContent = {
 // Projects Section
 export const projectsContent = {
   title: "Featured Projects",
-  description: "A showcase of backend systems and infrastructure projects",
+  description: "A showcase of some of my projects",
   projects: [
     {
       title: "Simple Go API",
@@ -162,16 +163,18 @@ export const projectsContent = {
     },
     {
       title: "Notion knock-off",
+      description:
+        "A simple Notion-like application built with Next.js and Prisma.",
       tech: ["Next.js", "React", "Tailwind CSS", "Prisma", "PostgreSQL"],
       github: "https://github.com/zjunaidz/notion-lite",
-      demo: "https://example.com",
+      demo: "https://potion.zjunaidz.me",
     },
     {
       title: "Game Explorer",
       description: "A simple Game Explorer build using Reactjs and RAWG API.",
       tech: ["React", "Zustand", "Tailwind CSS", "RAWG API"],
       github: "https://github.com/zjunaidz/game-hub",
-      demo: "https://example.com",
+      demo: "https://igdb.zjunaidz.me",
     },
     {
       title: "Relaycat - A Discord-like Chat App",
@@ -187,7 +190,6 @@ export const projectsContent = {
         "Tailwind CSS",
       ],
       github: "https://github.com/zjunaidz/relaycat",
-      demo: "https://example.com",
     },
   ],
 };
