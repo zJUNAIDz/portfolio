@@ -22,10 +22,10 @@ export const metadata = {
     title: 'Junaid Shaikh - Full-Stack Web Developer',
     description: 'Full-Stack Web Developer who likes coding, Linux, and learning Japanese.',
     images: [{
-      url: '/preview.png',
+      url: '/api/og',
       width: 1200,
       height: 630,
-      alt: 'Junaid Shaikh Portfolio Preview'
+      alt: 'Junaid Shaikh - Full-Stack Web Developer'
     }],
     type: 'website',
     locale: 'en_US',
@@ -34,8 +34,8 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Junaid Shaikh - Full-Stack Web Developer',
-    description: 'Full-Stack Web Developer who likes coding, Linux, and learning Japanese.',
-    images: ['/preview.png'],
+    description: 'Full-Stack Web Developer passionate about building scalable systems, Linux, and Japanese culture. Building robust server-side solutions.',
+    images: ['/api/og'],
   }
 };
 
