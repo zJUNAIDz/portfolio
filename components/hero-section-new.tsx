@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Download, Github, Linkedin } from "lucide-react"
+import { Download, Mail, Github, Linkedin } from "lucide-react"
 import { Button } from "./ui/button"
 import Link from "next/link"
 import { personalInfo, heroContent } from "@/data/portfolio-data"
@@ -53,6 +53,12 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
           >
+            <Button size="lg" asChild>
+              <Link href={`mailto:${personalInfo.email}`}>
+                <Mail className="w-4 h-4 mr-2" />
+                Get In Touch
+              </Link>
+            </Button>
             <Button variant="outline" size="lg" asChild>
               <Link href={personalInfo.cvUrl} target="_blank">
                 <Download className="w-4 h-4 mr-2" />

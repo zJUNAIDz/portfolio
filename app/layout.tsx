@@ -15,25 +15,26 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata = {
-  title: 'Junaid - Backend Software Engineer',
-  description: 'Backend Software Engineer passionate about building scalable systems, Linux, and Japanese culture. Building robust server-side solutions.',
+  metadataBase: new URL('https://zjunaidz.me'),
+  title: 'Junaid Shaikh - Full-Stack Web Developer',
+  description: 'Full-Stack Web Developer passionate about building scalable systems, Linux, and Japanese culture. Building robust server-side solutions.',
   openGraph: {
-    title: 'Junaid - Backend Software Engineer',
-    description: 'Backend Software Engineer passionate about building scalable systems, Linux, and Japanese culture. Building robust server-side solutions.',
+    title: 'Junaid Shaikh - Full-Stack Web Developer',
+    description: 'Full-Stack Web Developer who likes coding, Linux, and learning Japanese.',
     images: [{
       url: '/preview.png',
       width: 1200,
       height: 630,
-      alt: 'Junaid Portfolio Preview'
+      alt: 'Junaid Shaikh Portfolio Preview'
     }],
     type: 'website',
     locale: 'en_US',
-    url: 'https://zjunaidz.dev',
+    url: 'https://zjunaidz.me',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Junaid - Backend Software Engineer',
-    description: 'Backend Software Engineer passionate about building scalable systems, Linux, and Japanese culture.',
+    title: 'Junaid Shaikh - Full-Stack Web Developer',
+    description: 'Full-Stack Web Developer who likes coding, Linux, and learning Japanese.',
     images: ['/preview.png'],
   }
 };
