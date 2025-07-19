@@ -31,11 +31,7 @@ export function Footer() {
           </div>
 
           {/* Copyright */}
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <span>{footerContent.text}</span>
-            <Heart className="w-4 h-4 text-red-500" />
-          </div>
-          
+            <span>よろしくお願いします</span>
           <div className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} Junaid. All rights reserved.
           </div>

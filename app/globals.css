@@ -45,6 +45,10 @@
 
 :root {
   --radius: 0.625rem;
+  --background: #c0c0c0;  /* Slightly warmer white */
+  --foreground: #2D2D2D;  /* Soft black for better readability */
+  --card: #FFFFFF;
+  --card-foreground: #2D2D2D;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);

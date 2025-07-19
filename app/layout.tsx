@@ -1,8 +1,8 @@
+import '@/app/globals.css';
+import { KanjiBackground } from '@/components/kanji-background';
+import { ThemeProvider } from '@/components/theme-provider';
+import { Geist, Geist_Mono } from "next/font/google";
 import { ReactNode } from "react";
-import { Geist, Geist_Mono } from "next/font/google"
-import { ThemeProvider } from '@/components/theme-provider'
-import { KanjiBackground } from '@/components/kanji-background'
-import '@/app/globals.css'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,10 +45,14 @@ export default function RootLayout({
   children: ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
+      <body className="antialiased bg-background text-foreground transition-colors duration-200">
         <ThemeProvider
-          defaultTheme="system"
+          attribute="class"
+          defaultTheme="dark"
+          disableTransitionOnChange={false}
+          enableSystem={false}
+          themes={['light', 'dark']}
         >
           <KanjiBackground />
           {children}

@@ -9,7 +9,11 @@ import { Button } from "./ui/button"
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
+
+  // After mounting, we have access to the theme
+  useEffect(() => setMounted(true), [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,7 +28,7 @@ export function Navigation() {
     { href: "#experience", label: "Experience" },
     { href: "#skills", label: "Skills" },
     { href: "#projects", label: "Projects" },
-    { href: "#contact", label: "Contact" },
+    // { href: "#contact", label: "Contact" },
   ]
 
   const scrollToSection = (href: string) => {
@@ -84,7 +88,9 @@ export function Navigation() {
                 size="sm"
                 onClick={() => setTheme(theme === "light" ? "dark" : "light")}
               >
-                {theme === "light" ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
+                {mounted ? (
+                  theme === "light" ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />
+                ) : null}
               </Button>
             </div>
 
@@ -95,7 +101,9 @@ export function Navigation() {
                 size="sm"
                 onClick={() => setTheme(theme === "light" ? "dark" : "light")}
               >
-                {theme === "light" ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
+                {mounted ? (
+                  theme === "light" ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />
+                ) : null}
               </Button>
               <Button
                 variant="ghost"

@@ -112,7 +112,7 @@ export function ExperienceSection() {
             className="text-center mt-12"
           >
             <p className="text-muted-foreground italic">
-              * You can help me add one more experience :PFculture
+              * You can help me add one more experience (¬‿¬)
             </p>
           </motion.div>
         </div>

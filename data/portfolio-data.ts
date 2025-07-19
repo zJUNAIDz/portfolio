@@ -126,7 +126,7 @@ export const experienceContent = {
       duration: "May 2025 - Present",
       type: "Full-time",
       description:
-        "Junior Developer working on Agentic AI solutions using Mastra.ai",
+        "Junior Developer building Agentic AI solutions with Mastra.ai (An Agentic AI framework for Typescript)",
       achievements: [
         "Build Backend for AI Agentic solutions from scratch",
         "Integrate the backend REST API with frontend",
@@ -142,6 +142,7 @@ export const experienceContent = {
         "Zustand",
         "PostgreSQL",
         "Supabase",
+        "Mastra.ai",
       ],
       icon: Building2,
       color: "from-blue-500 to-blue-600",
@@ -229,7 +230,6 @@ export const contactContent = {
 
 // Footer
 export const footerContent = {
-  text: "Built with passion and lots of ☕",
   links: [
     { icon: Github, href: personalInfo.github },
     { icon: Linkedin, href: personalInfo.linkedin },
