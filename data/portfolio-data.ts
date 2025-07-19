@@ -15,7 +15,9 @@ import {
 // Personal Information
 export const personalInfo = {
   name: "Junaid Shaikh",
+  nameJp: "シェク ジュナエッド",
   title: "Full-Stack Developer",
+  titleJp: "フルスタック開発者",
   email: "junaidshaikh3967@gmail.com",
   location: "India",
   github: "https://github.com/zjunaidz",

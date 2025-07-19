@@ -21,8 +21,9 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-7xl font-bold mb-4"
+            className="text-5xl md:text-7xl font-bold mb-4 flex flex-col"
           >
+            <span className="text-primary text-lg opacity-75">{personalInfo.nameJp}</span>
             {personalInfo.name}
           </motion.h1>
 
@@ -31,8 +32,9 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl md:text-2xl text-muted-foreground mb-6"
+            className="text-xl md:text-2xl text-muted-foreground mb-6 flex flex-col"
           >
+            <span className="text-primary text-lg opacity-75">{personalInfo.titleJp}</span>
             {personalInfo.title}
           </motion.h2>
 
