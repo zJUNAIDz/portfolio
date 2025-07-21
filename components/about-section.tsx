@@ -19,13 +19,10 @@ export function AboutSection() {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             {aboutContent.title}
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-            Passionate Backend Developer specializing in building scalable, high-performance systems. 
-            I love designing robust APIs, optimizing database performance, and architecting cloud-native solutions.
-          </p>
+          
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-1 gap-12 items-center max-w-6xl mx-auto">
           {/* Interests Card */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}

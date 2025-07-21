@@ -1,7 +1,6 @@
 "use client"
 
-// Software Engineering related kanji with meanings
-const SOFTWARE_ENGINEERING_KANJI = [
+const KANJI = [
   '学', // Study/Learn
   '校', // School
   '時', // Time/Hour
@@ -31,7 +30,7 @@ const SOFTWARE_ENGINEERING_KANJI = [
 export function KanjiBackground() {
   return (
     <div className="kanji-grid">
-      {SOFTWARE_ENGINEERING_KANJI.map((kanji, index) => (
+      {KANJI.map((kanji, index) => (
         <div
           key={`${kanji}-${index}`}
           className="kanji-item"

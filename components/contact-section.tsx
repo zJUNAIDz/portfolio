@@ -78,9 +78,9 @@ export function ContactSection() {
               </Link>
             </Button>
             <Button variant="outline" size="lg" asChild className="flex-1">
-              <Link href={personalInfo.cvUrl} target="_blank">
+              <Link href={personalInfo.resumeUrl} target="_blank">
                 <Download className="w-4 h-4 mr-2" />
-                Download CV
+                Download Resume
               </Link>
             </Button>
           </motion.div>

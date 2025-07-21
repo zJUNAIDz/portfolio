@@ -22,8 +22,8 @@ export const personalInfo = {
   location: "India",
   github: "https://github.com/zjunaidz",
   linkedin: "https://linkedin.com/in/zjunaidz",
-  cvUrl:
-    "https://drive.google.com/file/d/1pOkrEd4tO05OfRcXLzThkmSxAeV0seZP/view?usp=sharing",
+  resumeUrl:
+    "https://drive.google.com/file/d/1OD9is1AeAwSCDW6gmeQJfQhpyt45FleL/view?usp=sharing",
 };
 
 // Hero Section
@@ -89,7 +89,6 @@ export const skillsContent = {
         "Next.js",
         "Express.js",
         "Hono.js",
-        "Elysia.js",
         "Gin",
       ],
     },
