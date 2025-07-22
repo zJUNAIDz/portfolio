@@ -47,25 +47,15 @@ export const aboutContent = {
   ],
   personalTraits: [
     {
-      title: "Linux Enthusiast",
-      description: "Still learning the ins and outs of Linux",
+      title: "Linux & Web Development Enthusiast",
+      description: "Exploring Linux systems and building web applications",
       icon: Monitor,
     },
     {
       title: "日本語学習者",
-      description: "Learning Japanese Language and culture",
-      icon: MapPin,
-    },
-    {
-      title: "Performance & Security",
       description:
-        "Enjoys learning performance and security aspects of systems",
-      icon: Code2,
-    },
-    {
-      title: "Problem Solver",
-      description: "Building solutions",
-      icon: Wrench,
+        "Learning Japanese Language and culture. Currently at N5 level.",
+      icon: MapPin,
     },
   ],
 };
@@ -78,10 +68,16 @@ export const skillsContent = {
     languages: {
       label: "Programming Languages",
       icon: Code2,
-      skills: ["TypeScript", "JavaScript", "Go", "Core Java", "Basic C++"],
+      skills: [
+        "Javascript/TypeScript",
+        "Go",
+        "Core Java",
+        "Basic C/C++",
+        "Basic Lua",
+      ],
     },
     frameworks: {
-      label: "Frameworks",
+      label: "Frameworks & Technologies",
       icon: Globe,
       skills: [
         "Node.js",
@@ -90,6 +86,16 @@ export const skillsContent = {
         "Express.js",
         "Hono.js",
         "Gin",
+        "Prisma",
+        "Mastra.ai",
+        "ai-sdk",
+        "tRPC",
+        "TanStack Query",
+        "Zustand",
+        "Tailwind CSS",
+        "Shadcn UI",
+        "socket.io",
+        "",
       ],
     },
     databases: {
@@ -105,12 +111,7 @@ export const skillsContent = {
     systemsTools: {
       label: "Systems & Tools",
       icon: Wrench,
-      skills: ["Git", "Bash", "Postman", "Burp Suite"],
-    },
-    operatingSystems: {
-      label: "Operating Systems",
-      icon: Monitor,
-      skills: ["Ubuntu", "Fedora", "Windows"],
+      skills: ["Git", "Bash", "Postman", "Burp Suite", "Ubuntu", "Fedora"],
     },
   },
 };
@@ -129,9 +130,9 @@ export const experienceContent = {
       description:
         "Junior Developer building Agentic AI solutions with Mastra.ai (An Agentic AI framework for Typescript)",
       achievements: [
-        "Build Backend for AI Agentic solutions from scratch",
-        "Integrate the backend REST API with frontend",
-        "Implement entire State management system on frontend",
+        "Build Backend for AI Agentic solutions from scratch.",
+        "Integrate the backend with frontend via REST API.",
+        "Implement entire State management system on frontend.",
       ],
       technologies: [
         "TypeScript",
@@ -144,6 +145,8 @@ export const experienceContent = {
         "PostgreSQL",
         "Supabase",
         "Mastra.ai",
+        "DataForSEO API",
+        "BullMQ",
       ],
       icon: Building2,
       color: "from-blue-500 to-blue-600",
@@ -157,41 +160,51 @@ export const projectsContent = {
   description: "A showcase of some of my projects",
   projects: [
     {
-      title: "Simple Go API",
-      description:
-        "High-performance API built with Go and LibSQL, built this to learn Go and Gin.",
-      tech: ["Go", "Gin", "LibSQL", "Docker"],
-      github: "https://github.com/zjunaidz/simple-go-api",
-    },
-    {
-      title: "Notion knock-off",
-      description:
-        "A simple Notion-like application built with Next.js and Prisma.",
-      tech: ["Next.js", "React", "Tailwind CSS", "Prisma", "PostgreSQL"],
-      github: "https://github.com/zjunaidz/notion-lite",
-      demo: "https://potion.zjunaidz.me",
-    },
-    {
-      title: "Game Explorer",
-      description: "A simple Game Explorer build using Reactjs and RAWG API.",
-      tech: ["React", "Zustand", "Tailwind CSS", "RAWG API"],
-      github: "https://github.com/zjunaidz/game-hub",
-      demo: "https://igdb.zjunaidz.me",
-    },
-    {
       title: "Relaycat - A Discord-like Chat App",
       description:
         "A Discord-like chat application built with modern web technologies.",
       tech: [
         "Next.js",
+        "Node.js",
+        "Hono.js",
         "Socket.io",
         "PostgreSQL",
         "Prisma",
         "Zustand",
-        "Tanstack query",
+        "TanStack Query",
         "Tailwind CSS",
       ],
       github: "https://github.com/zjunaidz/relaycat",
+    },
+    {
+      title: "Notion knock-off",
+      description:
+        "A simple Notion-like application built with Next.js and Prisma.",
+      tech: [
+        "Next.js",
+        "React",
+        "Tailwind CSS",
+        "Zustand",
+        "Prisma",
+        "PostgreSQL",
+        "Convex",
+      ],
+      github: "https://github.com/zjunaidz/notion-lite",
+      demo: "https://potion.zjunaidz.me",
+    },
+    {
+      title: "Game Explorer",
+      description: "A simple Game Explorer build using React.js and RAWG API.",
+      tech: ["React.js", "Zustand", "Tailwind CSS", "RAWG API"],
+      github: "https://github.com/zjunaidz/game-hub",
+      demo: "https://igdb.zjunaidz.me",
+    },
+    {
+      title: "Simple Go API",
+      description:
+        "High-performance API built with Go and LibSQL, built this to learn Go and Gin.",
+      tech: ["Go", "Gin", "LibSQL", "Docker"],
+      github: "https://github.com/zjunaidz/gin-rest-api",
     },
   ],
 };

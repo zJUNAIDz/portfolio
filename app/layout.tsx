@@ -3,7 +3,7 @@ import { KanjiBackground } from '@/components/kanji-background';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Geist, Geist_Mono } from "next/font/google";
 import { ReactNode } from "react";
-
+import { Analytics } from "@vercel/analytics/next"
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -57,6 +57,7 @@ export default function RootLayout({
           <KanjiBackground />
           {children}
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
