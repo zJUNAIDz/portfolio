@@ -24,7 +24,7 @@ export function SkillsSection() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 md:mx-20">
           {Object.entries(skillsContent.categories).map(([key, category], index) => (
             <motion.div
               key={key}

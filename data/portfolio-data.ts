@@ -75,13 +75,13 @@ export const skillsContent = {
   title: "Skills & Technologies",
   description: "Technologies and tools I use to build stuff",
   categories: {
-    backendLanguages: {
-      label: "Backend Languages",
+    languages: {
+      label: "Programming Languages",
       icon: Code2,
       skills: ["TypeScript", "JavaScript", "Go", "Core Java", "Basic C++"],
     },
-    webFrameworks: {
-      label: "Web Frameworks",
+    frameworks: {
+      label: "Frameworks",
       icon: Globe,
       skills: [
         "Node.js",
@@ -118,7 +118,7 @@ export const skillsContent = {
 // Experience Section
 export const experienceContent = {
   title: "Experience",
-  description: "My professional journey as a backend developer",
+  description: "My professional journey as a developer",
   experiences: [
     {
       company: "Slaab.ai",
