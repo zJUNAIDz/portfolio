@@ -1,10 +1,10 @@
 "use client"
 
+import { experienceContent } from "@/data/portfolio-data"
 import { motion } from "framer-motion"
 import { Calendar, MapPin } from "lucide-react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
 import { Badge } from "./ui/badge"
-import { experienceContent } from "@/data/portfolio-data"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
 
 export function ExperienceSection() {
   return (
@@ -76,7 +76,7 @@ export function ExperienceSection() {
 
                     {/* Achievements */}
                     <div>
-                      <h4 className="font-semibold mb-3 text-sm">Key Achievements:</h4>
+                      <h3 className="font-semibold mb-3 text-sm">Key Achievements:</h3>
                       <ul className="space-y-2">
                         {experience.achievements.map((achievement, i) => (
                           <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
@@ -89,7 +89,7 @@ export function ExperienceSection() {
 
                     {/* Technologies */}
                     <div>
-                      <h4 className="font-semibold mb-3 text-sm">Technologies Used:</h4>
+                      <h3 className="font-semibold mb-3 text-sm">Technologies Used:</h3>
                       <div className="flex flex-wrap gap-2">
                         {experience.technologies.map((tech) => (
                           <Badge key={tech} variant="secondary" className="text-xs">

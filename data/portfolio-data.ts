@@ -254,8 +254,8 @@ export const contactContent = {
 // Footer
 export const footerContent = {
   links: [
-    { icon: Github, href: personalInfo.github },
-    { icon: Linkedin, href: personalInfo.linkedin },
-    { icon: Mail, href: `mailto:${personalInfo.email}` },
+    { label: "GitHub", icon: Github, href: personalInfo.github },
+    { label: "LinkedIn", icon: Linkedin, href: personalInfo.linkedin },
+    { label: "Email", icon: Mail, href: `mailto:${personalInfo.email}` },
   ],
 };

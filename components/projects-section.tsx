@@ -1,11 +1,11 @@
 "use client"
 
+import { projectsContent } from "@/data/portfolio-data"
 import { motion } from "framer-motion"
-import { Github, ExternalLink } from "lucide-react"
+import { ExternalLink, Github } from "lucide-react"
 import { Badge } from "./ui/badge"
 import { Button } from "./ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
-import { projectsContent } from "@/data/portfolio-data"
 
 export function ProjectsSection() {
   return (

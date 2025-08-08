@@ -1,9 +1,12 @@
 import '@/app/globals.css';
 import { KanjiBackground } from '@/components/kanji-background';
+import { SeoJsonLd } from '@/components/seo-jsonld';
 import { ThemeProvider } from '@/components/theme-provider';
+import { Analytics } from "@vercel/analytics/next";
+import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from "next/font/google";
 import { ReactNode } from "react";
-import { Analytics } from "@vercel/analytics/next"
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -14,10 +17,38 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 })
 
-export const metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL('https://zjunaidz.me'),
   title: 'Junaid Shaikh - Full-Stack Web Developer',
   description: 'Full-Stack Web Developer passionate about building scalable systems, Linux, and Japanese culture. Building robust server-side solutions.',
+  applicationName: 'zjunaidz Portfolio',
+  authors: [{ name: 'Junaid Shaikh', url: 'https://zjunaidz.me' }],
+  creator: 'Junaid Shaikh',
+  publisher: 'Junaid Shaikh',
+  keywords: [
+    'Junaid Shaikh',
+    'zjunaidz',
+    'Junaid Shaikh web developer',
+    'Full-Stack Web Developer',
+    'Web Developer in India',
+    'Next.js Developer',
+    'React Developer',
+    'Node.js Developer',
+  ],
+  alternates: {
+    canonical: 'https://zjunaidz.me/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-video-preview': -1,
+      'max-snippet': -1,
+    },
+  },
   openGraph: {
     title: 'Junaid Shaikh - Full-Stack Web Developer',
     description: 'Full-Stack Web Developer who likes coding, Linux, and learning Japanese.',
@@ -30,13 +61,17 @@ export const metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://zjunaidz.me',
+    siteName: 'zjunaidz',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Junaid Shaikh - Full-Stack Web Developer',
     description: 'Full-Stack Web Developer passionate about building scalable systems, Linux, and Japanese culture. Building robust server-side solutions.',
     images: ['/api/og'],
-  }
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+  },
 };
 
 export default function RootLayout({
@@ -57,6 +92,7 @@ export default function RootLayout({
           <KanjiBackground />
           {children}
         </ThemeProvider>
+        <SeoJsonLd />
         <Analytics />
       </body>
     </html>

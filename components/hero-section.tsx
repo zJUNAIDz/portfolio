@@ -1,10 +1,10 @@
 "use client"
 
+import { heroContent, personalInfo } from "@/data/portfolio-data"
 import { motion } from "framer-motion"
-import { Download, Eye, Github, Linkedin, Notebook, Paperclip } from "lucide-react"
-import { Button } from "./ui/button"
+import { Github, Linkedin, Paperclip } from "lucide-react"
 import Link from "next/link"
-import { personalInfo, heroContent } from "@/data/portfolio-data"
+import { Button } from "./ui/button"
 
 export function HeroSection() {
   return (
@@ -56,7 +56,7 @@ export function HeroSection() {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
           >
             <Button variant="outline" size="lg" asChild>
-              <Link href={personalInfo.resumeUrl} target="_blank">
+              <Link aria-label="View resume" href={personalInfo.resumeUrl} target="_blank">
                 <Paperclip className="w-4 h-4 mr-2" />
                 View Resume
               </Link>
@@ -71,6 +71,7 @@ export function HeroSection() {
             className="flex justify-center gap-6"
           >
             <Link
+              aria-label="Junaid Shaikh's GitHub"
               href={personalInfo.github}
               target="_blank"
               className="p-3 rounded-full border hover:bg-accent transition-colors"
@@ -78,6 +79,7 @@ export function HeroSection() {
               <Github className="w-6 h-6" />
             </Link>
             <Link
+              aria-label="Junaid Shaikh's LinkedIn"
               href={personalInfo.linkedin}
               target="_blank"
               className="p-3 rounded-full border hover:bg-accent transition-colors"

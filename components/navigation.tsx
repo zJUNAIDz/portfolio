@@ -1,8 +1,8 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Moon, Sun, Menu, X } from "lucide-react"
+import { AnimatePresence, motion } from "framer-motion"
+import { Menu, Moon, Sun, X } from "lucide-react"
+import { useEffect, useState } from "react"
 import { useTheme } from "./theme-provider"
 import { Button } from "./ui/button"
 
@@ -24,7 +24,7 @@ export function Navigation() {
   }, [])
 
   const navItems = [
-    { href: "#about", label: "About" },
+    // { href: "#about", label: "About" },
     { href: "#experience", label: "Experience" },
     { href: "#skills", label: "Skills" },
     { href: "#projects", label: "Projects" },
@@ -44,9 +44,8 @@ export function Navigation() {
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
-          scrolled ? "bg-background/80 backdrop-blur-md" : "bg-transparent border-transparent"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${scrolled ? "bg-background/80 backdrop-blur-md" : "bg-transparent border-transparent"
+          }`}
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
@@ -81,11 +80,12 @@ export function Navigation() {
                   {item.label}
                 </motion.a>
               ))}
-              
+
               {/* Theme Toggle */}
               <Button
                 variant="ghost"
                 size="sm"
+                aria-label="Toggle theme"
                 onClick={() => setTheme(theme === "light" ? "dark" : "light")}
               >
                 {mounted ? (

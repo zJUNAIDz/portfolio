@@ -1,9 +1,8 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Heart } from "lucide-react"
-import Link from "next/link"
 import { footerContent, personalInfo } from "@/data/portfolio-data"
+import Link from "next/link"
 
 export function Footer() {
   return (
@@ -20,9 +19,11 @@ export function Footer() {
           <div className="flex gap-6">
             {footerContent.links.map((link, index) => (
               <Link
+                aria-label={`Social link ${link.label}`}
                 key={index}
                 href={link.href}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 rounded-full hover:bg-accent transition-colors"
               >
                 <link.icon className="w-5 h-5" />
@@ -33,7 +34,7 @@ export function Footer() {
           {/* Copyright */}
           <span>どうぞよろしくお願いします</span>
           <div className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} <Link href={personalInfo.github}>Junaid Shaikh</Link>.
+            © {new Date().getFullYear()} <Link aria-label="Junaid Shaikh's GitHub" href={personalInfo.github}>Junaid Shaikh</Link>.
           </div>
         </motion.div>
       </div>
