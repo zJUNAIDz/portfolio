@@ -89,14 +89,8 @@ export function ProjectsSection() {
           className="text-center mt-16"
         >
           <p className="text-muted-foreground mb-6">
-            Want to see more? Check out my GitHub for additional projects and contributions.
+            Not really proud of these projects, but they showcase my learning journey and I am currently working on more complex applications.
           </p>
-          <Button variant="outline" asChild>
-            <a href="https://github.com/zjunaidz" target="_blank" rel="noopener noreferrer">
-              <Github className="w-4 h-4 mr-2" />
-              View GitHub Profile
-            </a>
-          </Button>
         </motion.div>
       </div>
     </section>

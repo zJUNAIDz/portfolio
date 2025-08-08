@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { Heart } from "lucide-react"
 import Link from "next/link"
-import { footerContent } from "@/data/portfolio-data"
+import { footerContent, personalInfo } from "@/data/portfolio-data"
 
 export function Footer() {
   return (
@@ -31,9 +31,9 @@ export function Footer() {
           </div>
 
           {/* Copyright */}
-            <span>よろしくお願いします</span>
+          <span>どうぞよろしくお願いします</span>
           <div className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Junaid. All rights reserved.
+            © {new Date().getFullYear()} <Link href={personalInfo.github}>Junaid Shaikh</Link>.
           </div>
         </motion.div>
       </div>

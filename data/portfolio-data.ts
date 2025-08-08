@@ -16,22 +16,23 @@ import {
 export const personalInfo = {
   name: "Junaid Shaikh",
   nameJp: "シェク ジュナエッド",
-  title: "Full-Stack Developer",
-  titleJp: "フルスタック開発者",
+  title: "Full-Stack Web Developer",
+  titleJp: "フルスタックWebエンジニア",
   email: "junaidshaikh3967@gmail.com",
   location: "India",
   github: "https://github.com/zjunaidz",
   linkedin: "https://linkedin.com/in/zjunaidz",
+  instagram: "https://instagram.com/zjunaidz",
+  twitter: "https://twitter.com/zjunaidz",
   resumeUrl:
     "https://drive.google.com/file/d/1OD9is1AeAwSCDW6gmeQJfQhpyt45FleL/view?usp=sharing",
 };
 
 // Hero Section
 export const heroContent = {
-  badge: "Welcome to my portfolio",
   subtitle: "Full-Stack Developer",
   description:
-    "A recent graduate based in India learning and building full stack applications with a focus on backend systems and infrastructure. I use Fedora btw :p",
+    "A recent graduate based in India, learning and building full-stack web applications with a focus on backend systems and infrastructure. Also learning Japanese Language and currently at almost N4 . I use Fedora btw :p",
 };
 
 // About Section
@@ -88,20 +89,18 @@ export const skillsContent = {
         "Gin",
         "Prisma",
         "Mastra.ai",
-        "ai-sdk",
         "tRPC",
         "TanStack Query",
         "Zustand",
         "Tailwind CSS",
         "Shadcn UI",
         "socket.io",
-        "",
       ],
     },
     databases: {
       label: "Databases",
       icon: Database,
-      skills: ["PostgreSQL", "MongoDB", "Redis", "MySQL", "SQLite", "DynamoDB"],
+      skills: ["PostgreSQL", "MongoDB", "Redis", "MySQL", "SQLite"],
     },
     cloudDevOps: {
       label: "Cloud & DevOps",
@@ -111,28 +110,39 @@ export const skillsContent = {
     systemsTools: {
       label: "Systems & Tools",
       icon: Wrench,
-      skills: ["Git", "Bash", "Postman", "Burp Suite", "Ubuntu", "Fedora"],
+      skills: [
+        "VS Code",
+        "Git",
+        "Bash",
+        "Postman",
+        "PG Admin",
+        "Burp Suite",
+        "Ubuntu",
+        "Fedora",
+      ],
     },
   },
 };
 
 // Experience Section
 export const experienceContent = {
-  title: "Experience",
-  description: "My professional journey as a developer",
+  title: "Professional Experience",
+  description:
+    "A summary of my career journey and contributions as a developer",
   experiences: [
     {
       company: "Slaab.ai",
       position: "Junior Full-Stack Web Developer",
       location: "Remote, India",
-      duration: "May 2025 - Present",
+      duration: "May 2025 - July 2025",
       type: "Full-time",
       description:
-        "Junior Developer building Agentic AI solutions with Mastra.ai (An Agentic AI framework for Typescript)",
+        "Contributed to the development of AI powered web application called SEO Agent using Mastra.ai, Implemented features like SEO Site Audit, Keyword Research, and Content Generation, etc. with the help of Mastra.ai workflows and DataForSEO API.",
       achievements: [
-        "Build Backend for AI Agentic solutions from scratch.",
-        "Integrate the backend with frontend via REST API.",
-        "Implement entire State management system on frontend.",
+        "Built backend system for the AI-driven(llm api calls with some smart logic) application.",
+        "Developed RESTful APIs to integrate backend services with frontend application.",
+        "Implemented state management solutions on the frontend using Zustand for application state and TanStack Query for server state management.",
+        "Optimized application performance, reduced re-renders and improved user experience.",
       ],
       technologies: [
         "TypeScript",
@@ -142,8 +152,7 @@ export const experienceContent = {
         "React.js",
         "TanStack Query",
         "Zustand",
-        "PostgreSQL",
-        "Supabase",
+        "Supabase DB  (PostgreSQL)",
         "Mastra.ai",
         "DataForSEO API",
         "BullMQ",

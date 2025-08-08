@@ -59,7 +59,7 @@ export async function GET() {
                 marginTop: '20px',
               }}
             >
-              {['Next.js', 'React', 'TypeScript', 'Node.js'].map((tech) => (
+              {['TypeScript', 'Next.js', 'React.js', 'Node.js'].map((tech) => (
                 <div
                   key={tech}
                   style={{

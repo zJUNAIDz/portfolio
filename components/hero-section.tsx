@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Download, Github, Linkedin } from "lucide-react"
+import { Download, Eye, Github, Linkedin, Notebook, Paperclip } from "lucide-react"
 import { Button } from "./ui/button"
 import Link from "next/link"
 import { personalInfo, heroContent } from "@/data/portfolio-data"
@@ -57,8 +57,8 @@ export function HeroSection() {
           >
             <Button variant="outline" size="lg" asChild>
               <Link href={personalInfo.resumeUrl} target="_blank">
-                <Download className="w-4 h-4 mr-2" />
-                Download Resume
+                <Paperclip className="w-4 h-4 mr-2" />
+                View Resume
               </Link>
             </Button>
           </motion.div>

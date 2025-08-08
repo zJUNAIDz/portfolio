@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Send, Download } from "lucide-react"
+import { Send, Download, Eye } from "lucide-react"
 import { Card, CardContent } from "./ui/card"
 import { Button } from "./ui/button"
 import Link from "next/link"
@@ -79,8 +79,8 @@ export function ContactSection() {
             </Button>
             <Button variant="outline" size="lg" asChild className="flex-1">
               <Link href={personalInfo.resumeUrl} target="_blank">
-                <Download className="w-4 h-4 mr-2" />
-                Download Resume
+                <Eye className="w-4 h-4 mr-2" />
+                Resume
               </Link>
             </Button>
           </motion.div>
