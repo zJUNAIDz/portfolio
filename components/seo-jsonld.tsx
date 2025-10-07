@@ -1,5 +1,5 @@
 "use client"
-
+//* This one is vibe coded (does it really help in SEO it's just a fluff?)
 import { personalInfo, skillsContent } from "@/data/portfolio-data"
 import Script from "next/script"
 
@@ -15,7 +15,7 @@ export function SeoJsonLd() {
     ...skillsContent.categories.languages.skills,
     ...skillsContent.categories.frameworks.skills,
     ...skillsContent.categories.databases.skills,
-    ...skillsContent.categories.cloudDevOps.skills,
+    ...skillsContent.categories.otherTechs.skills,
   ].slice(0, 25)
 
   const websiteLd = {
@@ -24,14 +24,6 @@ export function SeoJsonLd() {
     name: "Junaid Shaikh - Full-Stack Web Developer",
     alternateName: ["zjunaidz", "Junaid Shaikh web developer"],
     url: "https://zjunaidz.me",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: "https://zjunaidz.me/?q={search_term_string}",
-      },
-      "query-input": "required name=search_term_string",
-    },
   }
 
   const personLd = {

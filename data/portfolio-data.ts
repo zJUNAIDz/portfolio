@@ -32,7 +32,7 @@ export const personalInfo = {
 export const heroContent = {
   subtitle: "Full-Stack Developer",
   description:
-    "A recent graduate based in India, learning and building full-stack web applications with a focus on backend systems and infrastructure. Also learning Japanese Language and currently at almost N4 . I use Fedora btw :p",
+    "Recent Grad from India, Building full-stack web apps with a backend bias, tinkering on Linux, learning Japanese, and pretending Leetcode is fun.",
 };
 
 // About Section
@@ -95,30 +95,26 @@ export const skillsContent = {
         "Tailwind CSS",
         "Shadcn UI",
         "socket.io",
+        "WebRTC",
       ],
     },
     databases: {
       label: "Databases",
       icon: Database,
-      skills: ["PostgreSQL", "MongoDB", "Redis", "MySQL", "SQLite"],
+      skills: ["PostgreSQL/MySQL", "MongoDB", "Redis", "SQLite"],
     },
-    cloudDevOps: {
-      label: "Cloud & DevOps",
+    otherTechs: {
+      label: "Other Technologies",
       icon: Cloud,
-      skills: ["Basic AWS", "Docker"],
-    },
-    systemsTools: {
-      label: "Systems & Tools",
-      icon: Wrench,
       skills: [
-        "VS Code",
+        "Basic AWS",
+        "Docker",
         "Git",
         "Bash",
         "Postman",
         "PG Admin",
         "Burp Suite",
-        "Ubuntu",
-        "Fedora",
+        "GNU/Linux",
       ],
     },
   },
@@ -170,8 +166,7 @@ export const projectsContent = {
   projects: [
     {
       title: "Relaycat - A Discord-like Chat App",
-      description:
-        "A Discord-like chat application built with modern web technologies.",
+      description: "A Discord-like chat application.",
       tech: [
         "Next.js",
         "Node.js",
@@ -187,8 +182,7 @@ export const projectsContent = {
     },
     {
       title: "Notion knock-off",
-      description:
-        "A simple Notion-like application built with Next.js and Prisma.",
+      description: "A simple Notion-like application.",
       tech: [
         "Next.js",
         "React",
@@ -203,15 +197,14 @@ export const projectsContent = {
     },
     {
       title: "Game Explorer",
-      description: "A simple Game Explorer build using React.js and RAWG API.",
+      description: "A simple Game Explorer.",
       tech: ["React.js", "Zustand", "Tailwind CSS", "RAWG API"],
       github: "https://github.com/zjunaidz/game-hub",
       demo: "https://igdb.zjunaidz.me",
     },
     {
       title: "Simple Go API",
-      description:
-        "High-performance API built with Go and LibSQL, built this to learn Go and Gin.",
+      description: "Simple REST API.",
       tech: ["Go", "Gin", "LibSQL", "Docker"],
       github: "https://github.com/zjunaidz/gin-rest-api",
     },

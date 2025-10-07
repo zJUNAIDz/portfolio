@@ -32,10 +32,7 @@ export function Footer() {
           </div>
 
           {/* Copyright */}
-          <span>どうぞよろしくお願いします</span>
-          <div className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} <Link aria-label="Junaid Shaikh's GitHub" href={personalInfo.github}>Junaid Shaikh</Link>.
-          </div>
+          {/* There ain't no copyrights bruh */}
         </motion.div>
       </div>
     </footer>
