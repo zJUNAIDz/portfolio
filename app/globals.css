@@ -126,81 +126,317 @@
   }
 }
 
-/* Custom styles for Japanese text and kanji */
-.kanji-bg {
-  position: absolute;
-  font-size: 12rem;
-  opacity: 0.02;
-  user-select: none;
-  pointer-events: none;
-  z-index: -1;
-  color: hsl(var(--muted-foreground));
-  font-weight: 300;
-  transition: opacity 0.3s ease;
-}
-
-.dark .kanji-bg {
-  opacity: 0.04;
-}
-
-/* Organized kanji positioning */
-.kanji-grid {
+/* Japanese quotes background - Aesthetic & UX optimized */
+.quotes-background {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  gap: 2rem;
-  padding: 2rem;
   z-index: -1;
   overflow: hidden;
+  pointer-events: none;
 }
 
-.kanji-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 8rem;
-  opacity: 0.010;
+.quote-item {
+  position: absolute;
+  font-size: 2.2rem;
+  opacity: 0;
   color: hsl(var(--muted-foreground));
   user-select: none;
   pointer-events: none;
-  transition: opacity 0.3s ease;
-  font-weight: 200;
+  font-weight: 300;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  transform: translateY(20px);
+  animation: fadeInFloat 2s ease-out forwards;
+  text-align: center;
+  font-family: var(--font-geist-sans);
 }
 
-.dark .kanji-item {
-  opacity: 0.025;
+.dark .quote-item {
+  color: hsl(var(--muted-foreground) / 0.8);
 }
 
-/* Responsive kanji sizes */
-@media (max-width: 1024px) {
-  .kanji-grid {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+/* Flipping animation structure */
+.quote-flipper {
+  perspective: 1000px;
+}
+
+.quote-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.quote-content.show-english {
+  transform: rotateY(180deg);
+}
+
+.quote-side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quote-japanese {
+  transform: rotateY(0deg);
+}
+
+.quote-english {
+  transform: rotateY(180deg);
+  font-style: italic;
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
+/* Geometric positioning following golden ratio principles */
+.quote-1 {
+  top: 25%;
+  left: 8%;
+  transform: rotate(-1.5deg) translateY(20px);
+  max-width: 35%;
+}
+
+.quote-2 {
+  top: 50%;
+  right: 6%;
+  transform: rotate(1deg) translateY(20px);
+  max-width: 40%;
+}
+
+.quote-3 {
+  bottom: 25%;
+  left: 20%;
+  transform: rotate(-0.5deg) translateY(20px);
+  max-width: 38%;
+}
+
+/* Subtle floating animation */
+@keyframes fadeInFloat {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg) translateY(20px);
+  }
+  50% {
+    opacity: 0.04;
+  }
+  100% {
+    opacity: 0.025;
+    transform: rotate(var(--rotation, 0deg)) translateY(0px);
+  }
+}
+
+.dark .quote-item {
+  animation: fadeInFloatDark 2s ease-out forwards;
+}
+
+@keyframes fadeInFloatDark {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg) translateY(20px);
+  }
+  50% {
+    opacity: 0.08;
+  }
+  100% {
+    opacity: 0.05;
+    transform: rotate(var(--rotation, 0deg)) translateY(0px);
+  }
+}
+
+/* Subtle breathing effect */
+.quote-item::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: radial-gradient(ellipse at center, 
+    hsl(var(--primary) / 0.01) 0%, 
+    transparent 70%);
+  animation: breathe 4s ease-in-out infinite;
+  border-radius: 50%;
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 0; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+/* Responsive design with better readability */
+@media (max-width: 1200px) {
+  .quote-item {
+    font-size: 1.8rem;
+    white-space: normal;
+    text-align: left;
+    line-height: 1.7;
   }
   
-  .kanji-item {
-    font-size: 6rem;
+  .quote-side {
+    text-align: left;
   }
+  
+  .quote-1 { top: 20%; left: 6%; max-width: 45%; }
+  .quote-2 { top: 48%; right: 4%; max-width: 50%; }
+  .quote-3 { bottom: 20%; left: 12%; max-width: 48%; }
 }
 
 @media (max-width: 768px) {
-  .kanji-grid {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+  .quote-item {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    max-width: 75% !important;
+    font-weight: 400;
+    letter-spacing: 0.02em;
   }
   
-  .kanji-item {
-    font-size: 4rem;
-    opacity: 0.01;
+  .quote-side {
+    text-align: left;
   }
   
-  .dark .kanji-item {
+  .quote-1 {
+    top: 15%;
+    left: 4%;
+    transform: rotate(0deg);
+  }
+  
+  .quote-2 {
+    top: 45%;
+    right: 4%;
+    transform: rotate(0deg);
+  }
+  
+  .quote-2 .quote-side {
+    text-align: right;
+  }
+  
+  .quote-3 {
+    bottom: 15%;
+    left: 4%;
+    transform: rotate(0deg);
+  }
+  
+  /* Reduce animations on mobile for performance */
+  .quote-item::after {
+    display: none;
+  }
+  
+  /* Simpler flip animation on mobile */
+  .quote-content {
+    transition: transform 0.6s ease-in-out;
+  }
+  
+  @keyframes fadeInFloat {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 0.06;
+      transform: translateY(0px);
+    }
+  }
+  
+  @keyframes fadeInFloatDark {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 0.12;
+      transform: translateY(0px);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .quote-item {
+    font-size: 1.4rem;
+    opacity: 0.05 !important;
+    max-width: 85% !important;
+    line-height: 1.4;
+    font-weight: 500;
+  }
+  
+  .dark .quote-item {
+    opacity: 0.1 !important;
+  }
+  
+  .quote-1 {
+    top: 30%;
+    left: 3%;
+  }
+  
+  .quote-2 {
+    top: 50%;
+    right: 3%;
+  }
+  
+  .quote-3 {
+    bottom: 30%;
+    left: 3%;
+  }
+}
+
+/* Extra small screens (iPhone SE, etc.) */
+@media (max-width: 375px) {
+  .quote-item {
+    font-size: 1.2rem;
+    opacity: 0.04 !important;
+    max-width: 90% !important;
+    font-weight: 500;
+  }
+  
+  .dark .quote-item {
+    opacity: 0.08 !important;
+  }
+}
+
+/* Landscape mobile orientation */
+@media (max-width: 768px) and (orientation: landscape) {
+  .quote-item {
+    font-size: 1rem;
+    max-width: 50% !important;
+  }
+  
+  .quote-1 {
+    top: 30%;
+    left: 3%;
+  }
+  
+  .quote-2 {
+    top: 45%;
+    right: 3%;
+  }
+  
+  .quote-3 {
+    bottom: 8%;
+    left: 25%;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .quote-item {
+    animation: none;
     opacity: 0.02;
+  }
+  
+  .dark .quote-item {
+    opacity: 0.04;
+  }
+  
+  .quote-item::after {
+    display: none;
   }
 }
 

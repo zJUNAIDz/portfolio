@@ -1,5 +1,5 @@
 import '@/app/globals.css';
-import { KanjiBackground } from '@/components/kanji-background';
+import { QuotesBackground } from '@/components/quotes-background';
 import { SeoJsonLd } from '@/components/seo-jsonld';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Analytics } from "@vercel/analytics/next";
@@ -89,7 +89,7 @@ export default function RootLayout({
           enableSystem={false}
           themes={['light', 'dark']}
         >
-          <KanjiBackground />
+          <QuotesBackground />
           {children}
         </ThemeProvider>
         <SeoJsonLd />
