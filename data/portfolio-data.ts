@@ -25,7 +25,7 @@ export const personalInfo = {
   instagram: "https://instagram.com/zjunaidz",
   twitter: "https://twitter.com/zjunaidz",
   resumeUrl:
-    "https://drive.google.com/file/d/1OD9is1AeAwSCDW6gmeQJfQhpyt45FleL/view?usp=sharing",
+    "https://drive.google.com/drive/folders/1m0d2gpdHphka4_CY8xJ5aMEa1r4tnQWM?usp=sharing",
 };
 
 // Hero Section
