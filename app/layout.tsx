@@ -1,4 +1,5 @@
 import '@/app/globals.css';
+import { RenderIfMaxWidth } from '@/components/width-wrapper';
 import { QuotesBackground } from '@/components/quotes-background';
 import { SeoJsonLd } from '@/components/seo-jsonld';
 import { ThemeProvider } from '@/components/theme-provider';
@@ -89,7 +90,9 @@ export default function RootLayout({
           enableSystem={false}
           themes={['light', 'dark']}
         >
-          <QuotesBackground />
+          <RenderIfMaxWidth maxWidth={1215}>
+            <QuotesBackground />
+          </RenderIfMaxWidth>
           {children}
         </ThemeProvider>
         <SeoJsonLd />
