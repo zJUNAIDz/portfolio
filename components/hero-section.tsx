@@ -2,8 +2,9 @@
 
 import { heroContent, personalInfo } from "@/data/portfolio-data"
 import { motion } from "framer-motion"
-import { Github, Linkedin, Paperclip } from "lucide-react"
+import { Paperclip } from "lucide-react"
 import Link from "next/link"
+import { Socials } from "./socials"
 import { Button } from "./ui/button"
 
 export function HeroSection() {
@@ -64,29 +65,7 @@ export function HeroSection() {
           </motion.div>
 
           {/* Social Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.0 }}
-            className="flex justify-center gap-6"
-          >
-            <Link
-              aria-label="Junaid Shaikh's GitHub"
-              href={personalInfo.github}
-              target="_blank"
-              className="p-3 rounded-full border hover:bg-accent transition-colors"
-            >
-              <Github className="w-6 h-6" />
-            </Link>
-            <Link
-              aria-label="Junaid Shaikh's LinkedIn"
-              href={personalInfo.linkedin}
-              target="_blank"
-              className="p-3 rounded-full border hover:bg-accent transition-colors"
-            >
-              <Linkedin className="w-6 h-6" />
-            </Link>
-          </motion.div>
+          <Socials />
         </motion.div>
       </div>
     </section>

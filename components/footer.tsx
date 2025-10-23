@@ -1,8 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { footerContent, personalInfo } from "@/data/portfolio-data"
-import Link from "next/link"
+import { Socials } from "./socials"
 
 export function Footer() {
   return (
@@ -16,21 +15,7 @@ export function Footer() {
           className="flex flex-col items-center gap-6"
         >
           {/* Social Links */}
-          <div className="flex gap-6">
-            {footerContent.links.map((link, index) => (
-              <Link
-                aria-label={`Social link ${link.label}`}
-                key={index}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-full hover:bg-accent transition-colors"
-              >
-                <link.icon className="w-5 h-5" />
-              </Link>
-            ))}
-          </div>
-
+          <Socials />
           {/* Copyright */}
           {/* There ain't no copyrights bruh */}
         </motion.div>

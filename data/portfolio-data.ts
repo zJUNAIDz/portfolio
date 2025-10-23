@@ -8,8 +8,7 @@ import {
   Linkedin,
   Mail,
   MapPin,
-  Monitor,
-  Wrench,
+  Monitor
 } from "lucide-react";
 
 // Personal Information
@@ -21,6 +20,7 @@ export const personalInfo = {
   email: "junaidshaikh3967@gmail.com",
   location: "India",
   github: "https://github.com/zjunaidz",
+  leetcode: "https://leetcode.com/u/zjunaidz",
   linkedin: "https://linkedin.com/in/zjunaidz",
   instagram: "https://instagram.com/zjunaidz",
   twitter: "https://twitter.com/zjunaidz",
