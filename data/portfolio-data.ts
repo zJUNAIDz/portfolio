@@ -1,3 +1,4 @@
+import { LeetcodeIcon } from "@/components/icons";
 import {
   Building2,
   Cloud,
@@ -5,20 +6,48 @@ import {
   Database,
   Github,
   Globe,
+  Instagram,
   Linkedin,
   Mail,
   MapPin,
-  Monitor
+  Monitor,
+  Twitter,
 } from "lucide-react";
 
-// Personal Information
 export const personalInfo = {
   name: "Junaid Shaikh",
   nameJp: "シェク ジュナエッド",
-  title: "Full-Stack Web Developer",
+  title: "Full-Stack Developer",
   titleJp: "フルスタックWebエンジニア",
   email: "junaidshaikh3967@gmail.com",
   location: "India",
+  sns: [
+    {
+      label: "Github",
+      Icon: Github,
+      url: "https://github.com/zjunaidz",
+    },
+    {
+      label: "LeetCode",
+      Icon: LeetcodeIcon,
+      url: "https://leetcode.com/u/zjunaidz",
+    },
+    {
+      label: "LinkedIn",
+      Icon: Linkedin,
+      url: "https://linkedin.com/in/zjunaidz",
+    },
+    {
+      label: "Twitter",
+      Icon: Twitter,
+      url: "https://twitter.com/zjunaidz",
+    },
+    {
+      label: "Email",
+      Icon: Mail,
+      url: "mailto:junaidshaikh3967@gmail.com",
+    },
+  ],
   github: "https://github.com/zjunaidz",
   leetcode: "https://leetcode.com/u/zjunaidz",
   linkedin: "https://linkedin.com/in/zjunaidz",
@@ -28,14 +57,12 @@ export const personalInfo = {
     "https://drive.google.com/drive/folders/1m0d2gpdHphka4_CY8xJ5aMEa1r4tnQWM?usp=sharing",
 };
 
-// Hero Section
 export const heroContent = {
   subtitle: "Full-Stack Developer",
   description:
     "Recent Grad from India, Building full-stack web apps with a backend bias, tinkering on Linux, learning Japanese, and pretending Leetcode is fun.",
 };
 
-// About Section
 export const aboutContent = {
   title: "About Me",
   interests: [
@@ -61,7 +88,6 @@ export const aboutContent = {
   ],
 };
 
-// Skills Section
 export const skillsContent = {
   title: "Skills & Technologies",
   description: "Technologies and tools I use to build stuff",
@@ -81,20 +107,21 @@ export const skillsContent = {
       label: "Frameworks & Technologies",
       icon: Globe,
       skills: [
-        "Node.js",
+        "Node.js/Bun.js",
         "React.js",
         "Next.js",
         "Express.js",
         "Hono.js",
         "Gin",
-        "Prisma",
+        "PrismaORM",
+        "DrizzleORM",
         "Mastra.ai",
         "tRPC",
         "TanStack Query",
         "Zustand",
+        "Redux/Toolkit",
         "Tailwind CSS",
-        "Shadcn UI",
-        "socket.io",
+        "Websocket/Socket.io",
         "WebRTC",
       ],
     },
@@ -120,7 +147,6 @@ export const skillsContent = {
   },
 };
 
-// Experience Section
 export const experienceContent = {
   title: "Professional Experience",
   description:
@@ -128,30 +154,35 @@ export const experienceContent = {
   experiences: [
     {
       company: "Slaab.ai",
-      position: "Junior Full-Stack Web Developer",
+      position: "Junior Full-Stack Developer",
       location: "Remote, India",
       duration: "May 2025 - July 2025",
       type: "Full-time",
       description:
-        "Contributed to the development of AI powered web application called SEO Agent using Mastra.ai, Implemented features like SEO Site Audit, Keyword Research, and Content Generation, etc. with the help of Mastra.ai workflows and DataForSEO API.",
+        "Worked on an internal, pre-launch AI-powered SEO platform intended for B2B customers, focused on automated website audits, keyword research, and content analysis. Contributed primarily to backend systems and agentic workflows, while also shipping frontend features and performance improvements during active development.",
       achievements: [
-        "Built backend system for the AI-driven(llm api calls with some smart logic) application.",
-        "Developed RESTful APIs to integrate backend services with frontend application.",
-        "Implemented state management solutions on the frontend using Zustand for application state and TanStack Query for server state management.",
-        "Optimized application performance, reduced re-renders and improved user experience.",
+        "Designed and implemented the backend architecture for an AI-driven SEO audit system during early-stage product development.",
+        "Built agentic LLM workflows using Mastra.ai to coordinate crawl analysis, SERP evaluation, audit reasoning, and actionable fix generation.",
+        "Integrated DataForSEO, FireCrawl, and Puppeteer to collect crawl data, keyword intelligence, and page-level signals for downstream analysis.",
+        "Implemented an async, job-based execution model using BullMQ to safely handle long-running audits with retries, idempotency, and failure isolation.",
+        "Used PostgreSQL as a persistent store for job state and intermediate results to support retries and client polling.",
+        "Developed REST APIs for initiating audits and querying progress and results during internal testing.",
+        "Reworked an existing UI by introducing structured client and server state management, reducing render overhead and improving responsiveness.",
       ],
       technologies: [
         "TypeScript",
-        "Node.js/Bun.js",
+        "Node.js / Bun.js",
         "Hono.js",
-        "Next.js",
-        "React.js",
+        "React.js / Next.js",
         "TanStack Query",
         "Zustand",
-        "Supabase DB  (PostgreSQL)",
+        "PostgreSQL (Supabase)",
         "Mastra.ai",
         "DataForSEO API",
+        "FireCrawl",
+        "Puppeteer",
         "BullMQ",
+        "Docker",
       ],
       icon: Building2,
       color: "from-blue-500 to-blue-600",
