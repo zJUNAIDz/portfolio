@@ -1,24 +1,9 @@
-import { ExperienceSkeleton, FooterSkeleton, HeroSkeleton, NavigationSkeleton, ProjectsSkeleton, SkillsSkeleton } from '@/components/skeletons'
-import dynamic from 'next/dynamic'
-
-const Navigation = dynamic(() => import('@/components/navigation').then(mod => mod.Navigation), {
-  loading: () => <NavigationSkeleton />,
-})
-const HeroSection = dynamic(() => import('@/components/hero-section').then(mod => mod.HeroSection), {
-  loading: () => <HeroSkeleton />,
-})
-const ExperienceSection = dynamic(() => import('@/components/experience-section').then(mod => mod.ExperienceSection), {
-  loading: () => <ExperienceSkeleton />,
-})
-const SkillsSection = dynamic(() => import('@/components/skills-section').then(mod => mod.SkillsSection), {
-  loading: () => <SkillsSkeleton />,
-})
-const ProjectsSection = dynamic(() => import('@/components/projects-section').then(mod => mod.ProjectsSection), {
-  loading: () => <ProjectsSkeleton />,
-})
-const Footer = dynamic(() => import('@/components/footer').then(mod => mod.Footer), {
-  loading: () => <FooterSkeleton />,
-})
+import { ExperienceSection } from '@/components/experience-section'
+import { Footer } from '@/components/footer'
+import { HeroSection } from '@/components/hero-section'
+import { Navigation } from '@/components/navigation'
+import { ProjectsSection } from '@/components/projects-section'
+import { SkillsSection } from '@/components/skills-section'
 
 export default function HomePage() {
   return (
