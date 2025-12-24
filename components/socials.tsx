@@ -1,8 +1,7 @@
 import { personalInfo } from "@/data/portfolio-data";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, MailIcon } from "lucide-react";
+import { Github, Linkedin, MailIcon } from "lucide-react";
 import Link from "next/link";
-import { SVGAttributes } from "react";
 
 export function Socials() {
   return (
