@@ -19,7 +19,7 @@ export async function GET(req: NextRequest) {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: '#000000',
+          backgroundColor: '#DCDCDC',
           padding: '40px',
         }}
       >
@@ -30,7 +30,7 @@ export async function GET(req: NextRequest) {
             width: '100%',
             height: '100%',
             border: '1px solid #333',
-            backgroundColor: '#050505',
+            backgroundColor: '#F5F5F5', 
             position: 'relative',
           }}
         >
@@ -45,7 +45,7 @@ export async function GET(req: NextRequest) {
               borderBottom: '1px solid #333',
             }}
           >
-            <div style={{ fontSize: 24, color: '#666', fontWeight: 600, letterSpacing: '-0.02em' }}>
+            <div style={{ fontSize: 24, color: '#333', fontWeight: 600, letterSpacing: '-0.02em' }}>
               zjunaidz/portfolio
             </div>
             <div style={{ display: 'flex', gap: '8px' }}>
@@ -66,9 +66,9 @@ export async function GET(req: NextRequest) {
           >
             <div
               style={{
-                fontSize: 80,
+                fontSize: 96,
                 fontWeight: 800,
-                color: '#fff',
+                color: '#111',
                 lineHeight: 1.1,
                 letterSpacing: '-0.03em',
                 marginBottom: '20px',
@@ -78,7 +78,7 @@ export async function GET(req: NextRequest) {
             </div>
             <div
               style={{
-                fontSize: 36,
+                fontSize: 50,
                 color: '#888',
                 fontWeight: 400,
                 letterSpacing: '-0.01em',
@@ -96,7 +96,7 @@ export async function GET(req: NextRequest) {
               width: '100%',
               padding: '24px 40px',
               borderTop: '1px solid #333',
-              backgroundColor: '#0a0a0a',
+              backgroundColor: '#E0E0E0',
               gap: '12px',
             }}
           >
@@ -107,9 +107,9 @@ export async function GET(req: NextRequest) {
                   padding: '6px 16px',
                   border: '1px solid #333',
                   borderRadius: '4px',
-                  color: '#ccc',
-                  fontSize: 18,
-                  backgroundColor: '#000',
+                  color: '#111',
+                  fontSize: 26,
+                  backgroundColor: '#E0E0E0',
                 }}
               >
                 {tag}
