@@ -1,7 +1,6 @@
 "use client"
 
 import { experienceContent } from "@/data/portfolio-data"
-import { motion } from "framer-motion"
 import { Calendar, MapPin } from "lucide-react"
 import { Badge } from "./ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
@@ -10,29 +9,19 @@ export function ExperienceSection() {
   return (
     <section id="experience" className="py-20 bg-muted/10">
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             {experienceContent.title}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             {experienceContent.description}
           </p>
-        </motion.div>
+        </div>
 
         <div className="max-w-4xl mx-auto">
           {experienceContent.experiences.map((experience, index) => (
-            <motion.div
+            <div
               key={experience.company}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
               className="relative mb-12 last:mb-0"
             >
               {/* Timeline line */}
@@ -80,7 +69,7 @@ export function ExperienceSection() {
                       <ul className="space-y-2">
                         {experience.achievements.map((achievement, i) => (
                           <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
-                            <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                            <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
                             {achievement}
                           </li>
                         ))}
@@ -101,21 +90,14 @@ export function ExperienceSection() {
                   </CardContent>
                 </Card>
               </div>
-            </motion.div>
+            </div>
           ))}
 
-          {/* Note for more experience */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-center mt-12"
-          >
+          <div className="text-center mt-12">
             <p className="text-muted-foreground italic">
               * You can help me add more experience (¬‿¬)
             </p>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

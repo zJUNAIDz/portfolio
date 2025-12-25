@@ -1,4 +1,3 @@
-import { LeetcodeIcon } from "@/components/icons";
 import {
   Building2,
   Cloud,
@@ -6,13 +5,13 @@ import {
   Database,
   Github,
   Globe,
-  Instagram,
+  LeetcodeIcon,
   Linkedin,
   Mail,
   MapPin,
   Monitor,
-  Twitter,
-} from "lucide-react";
+  XTwitterIcon,
+} from "@/components/icons";
 
 export const personalInfo = {
   name: "Junaid Shaikh",
@@ -39,7 +38,7 @@ export const personalInfo = {
     },
     {
       label: "Twitter",
-      Icon: Twitter,
+      Icon: XTwitterIcon,
       url: "https://twitter.com/zjunaidz",
     },
     {

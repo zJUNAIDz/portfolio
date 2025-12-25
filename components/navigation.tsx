@@ -1,8 +1,7 @@
 "use client"
 
-import { AnimatePresence, motion } from "framer-motion"
-import { Menu, Moon, Sun, X } from "lucide-react"
 import { useEffect, useState } from "react"
+import { Menu, Moon, Sun, X } from "./icons"
 import { useTheme } from "./theme-provider"
 import { Button } from "./ui/button"
 
@@ -41,32 +40,28 @@ export function Navigation() {
 
   return (
     <>
-      <motion.nav
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
+      <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${scrolled ? "bg-background/80 backdrop-blur-md" : "bg-transparent border-transparent"
           }`}
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <motion.a
+            <a
               href="#home"
               onClick={(e) => {
                 e.preventDefault()
                 scrollToSection("#home")
               }}
               className="text-xl font-bold"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
             >
               Junaid
-            </motion.a>
+            </a>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               {navItems.map((item) => (
-                <motion.a
+                <a
                   key={item.label}
                   href={item.href}
                   onClick={(e) => {
@@ -74,11 +69,9 @@ export function Navigation() {
                     scrollToSection(item.href)
                   }}
                   className="text-sm hover:text-primary transition-colors"
-                  whileHover={{ y: -2 }}
-                  whileTap={{ y: 0 }}
                 >
                   {item.label}
-                </motion.a>
+                </a>
               ))}
 
               {/* Theme Toggle */}
@@ -115,43 +108,35 @@ export function Navigation() {
             </div>
           </div>
         </div>
-      </motion.nav>
+      </nav>
 
       {/* Mobile Menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 md:hidden"
-          >
-            <div className="absolute inset-0 bg-background/80 backdrop-blur-md" onClick={() => setIsOpen(false)} />
-            <div className="relative bg-background border-b">
-              <div className="container mx-auto px-4 py-8 pt-20">
-                <div className="flex flex-col space-y-6">
-                  {navItems.map((item, index) => (
-                    <motion.a
-                      key={item.label}
-                      href={item.href}
-                      onClick={(e) => {
-                        e.preventDefault()
-                        scrollToSection(item.href)
-                      }}
-                      className="text-lg hover:text-primary transition-colors"
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                    >
-                      {item.label}
-                    </motion.a>
-                  ))}
-                </div>
+      {isOpen && (
+        <div
+          className="fixed inset-0 z-40 md:hidden"
+        >
+          <div className="absolute inset-0 bg-background/80 backdrop-blur-md" onClick={() => setIsOpen(false)} />
+          <div className="relative bg-background border-b">
+            <div className="container mx-auto px-4 py-8 pt-20">
+              <div className="flex flex-col space-y-6">
+                {navItems.map((item, index) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    onClick={(e) => {
+                      e.preventDefault()
+                      scrollToSection(item.href)
+                    }}
+                    className="text-lg hover:text-primary transition-colors"
+                  >
+                    {item.label}
+                  </a>
+                ))}
               </div>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+        </div>
+      )}
     </>
   )
 }

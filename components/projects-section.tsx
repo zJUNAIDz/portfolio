@@ -1,8 +1,7 @@
 "use client"
 
 import { projectsContent } from "@/data/portfolio-data"
-import { motion } from "framer-motion"
-import { ExternalLink, Github } from "lucide-react"
+import { ExternalLink, Github } from "./icons"
 import { Badge } from "./ui/badge"
 import { Button } from "./ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
@@ -11,30 +10,18 @@ export function ProjectsSection() {
   return (
     <section id="projects" className="py-20">
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             {projectsContent.title}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             {projectsContent.description}
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {projectsContent.projects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-            >
+            <div key={project.title}>
               <Card className="h-full hover:shadow-lg transition-all duration-300 group">
                 <CardHeader>
                   <div className="flex items-start justify-between">
@@ -76,21 +63,15 @@ export function ProjectsSection() {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </div>
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center mt-16"
-        >
+        <div className="text-center mt-16">
           <p className="text-muted-foreground mb-6">
             Not really proud of these projects, but they showcase my learning journey and I am currently working on more complex applications.
           </p>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

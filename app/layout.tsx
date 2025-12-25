@@ -1,8 +1,6 @@
 import '@/app/globals.css';
-import { QuotesBackground } from '@/components/quotes-background';
 import { SeoJsonLd } from '@/components/seo-jsonld';
 import { ThemeProvider } from '@/components/theme-provider';
-import { RenderIfMaxWidth } from '@/components/width-wrapper';
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from 'next';
 import { Geist } from "next/font/google";
@@ -77,20 +75,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${geistSans.variable}`} suppressHydrationWarning>
-      <body className="antialiased bg-background text-foreground transition-colors duration-50">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          disableTransitionOnChange={false}
-          enableSystem={false}
-          themes={['light', 'dark']}
-        >
-          <RenderIfMaxWidth maxWidth={1215}>
-            <QuotesBackground />
-          </RenderIfMaxWidth>
-          {children}
-        </ThemeProvider>
-        <SeoJsonLd />
+      <body className="antialiased bg-[#DCDCDC] text-foreground">
+        {children}
+        <SeoJsonLd /> {/*Vibe Coded*/}
         <Analytics />
       </body>
     </html>
