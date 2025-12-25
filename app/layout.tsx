@@ -75,8 +75,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${geistSans.variable}`} suppressHydrationWarning>
-      <body className="antialiased bg-[#DCDCDC] text-foreground">
-        {children}
+      <body className="antialiased bg-background text-foreground transition-colors duration-50">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          disableTransitionOnChange={false}
+          enableSystem={false}
+          themes={['light', 'dark']}
+        >
+          {children}
+        </ThemeProvider>
         <SeoJsonLd /> {/*Vibe Coded*/}
         <Analytics />
       </body>
