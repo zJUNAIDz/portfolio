@@ -1,6 +1,5 @@
 import '@/app/globals.css';
 import { SeoJsonLd } from '@/components/seo-jsonld';
-import { ThemeProvider } from '@/components/theme-provider';
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from 'next';
 import { Geist } from "next/font/google";
@@ -76,15 +75,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable}`} suppressHydrationWarning>
       <body className="antialiased bg-background text-foreground transition-colors duration-50">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          disableTransitionOnChange={false}
-          enableSystem={false}
-          themes={['light', 'dark']}
-        >
-          {children}
-        </ThemeProvider>
+        {children}
         <SeoJsonLd /> {/*Vibe Coded*/}
         <Analytics />
       </body>

@@ -81,7 +81,7 @@ export function ExperienceSection() {
                       <h3 className="font-semibold mb-3 text-sm">Technologies Used:</h3>
                       <div className="flex flex-wrap gap-2">
                         {experience.technologies.map((tech) => (
-                          <Badge key={tech} variant="secondary" className="text-xs">
+                          <Badge key={tech} variant="outline" className="text-xs">
                             {tech}
                           </Badge>
                         ))}
