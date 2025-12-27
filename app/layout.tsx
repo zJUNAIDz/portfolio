@@ -1,4 +1,5 @@
 import '@/app/globals.css';
+import { Navigation } from '@/components/navigation';
 import { SeoJsonLd } from '@/components/seo-jsonld';
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from 'next';
@@ -75,6 +76,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable}`} suppressHydrationWarning>
       <body className="antialiased bg-background text-foreground transition-colors duration-50">
+        <Navigation />
         {children}
         <SeoJsonLd /> {/*Vibe Coded*/}
         <Analytics />

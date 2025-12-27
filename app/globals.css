@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@plugin "@tailwindcss/typography";
 
 
 
@@ -111,4 +112,36 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--foreground));
+}
+
+/* Improve readability for MDX content rendered with the prose class */
+.prose,
+.prose p,
+.prose li,
+.prose blockquote {
+  color: var(--foreground) !important;
+}
+
+.prose :is(h1,h2,h3,h4,h5,h6,strong,th,thead) {
+  color: var(--foreground) !important;
+}
+
+.prose a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.prose a:hover {
+  opacity: 0.9;
+}
+
+.prose code,
+.prose pre,
+.prose tt {
+  color: var(--foreground) !important;
+  background: transparent;
+}
+
+.prose img {
+  max-width: 100%;
 }

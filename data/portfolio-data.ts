@@ -37,9 +37,9 @@ export const personalInfo = {
       url: "https://linkedin.com/in/zjunaidz",
     },
     {
-      label: "Twitter",
+      label: "XTwitter",
       Icon: XTwitterIcon,
-      url: "https://twitter.com/zjunaidz",
+      url: "https://x.com/zjunaidz",
     },
     {
       label: "Email",

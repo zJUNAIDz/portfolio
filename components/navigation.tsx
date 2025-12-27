@@ -1,12 +1,14 @@
 "use client"
 
+import { cn } from "@/lib/utils";
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 export function Navigation() {
-
+  const path = usePathname();
   const navItems = [
-    { label: "Home", href: "/" },
-    { label: "Blog", href: "/blog" },
+    { label: "Home", href: "/", active: path === "/" },
+    { label: "Devlog", href: "/devlogs", active: path === "/devlogs" },
   ]
 
   return (
@@ -19,7 +21,10 @@ export function Navigation() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="text-md hover:text-primary transition-colors"
+                  className={cn(
+                    "text-lg font-medium hover:text-primary transition-colors",
+                    item.active ? "text-primary underline underline-offset-3" : "text-foreground/70"
+                  )}
                 >
                   {item.label}
                 </Link>
