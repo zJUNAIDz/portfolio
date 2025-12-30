@@ -1,3 +1,4 @@
+import DevlogPathTracker from "@/components/devlog-tracker";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { getAllPosts } from "@/lib/mdx";
 import { format } from "date-fns";
@@ -10,9 +11,9 @@ export const metadata = {
 
 export default function DevlogPage() {
   const posts = getAllPosts(["title", "date", "slug", "tags"]);
-
   return (
     <main className="container mx-auto px-4 py-24 min-h-screen">
+      <DevlogPathTracker />
       <div className="max-w-4xl mx-auto">
         <div className="grid gap-6">
           {posts.map((post) => (

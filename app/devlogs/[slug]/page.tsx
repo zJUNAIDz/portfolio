@@ -3,7 +3,9 @@ import { format } from "date-fns";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import DevlogTracker from '@/components/devlog-tracker'
 
+//* SSG
 export async function generateStaticParams() {
   const posts = getPostSlugs();
   return posts.map((post) => ({
@@ -37,6 +39,7 @@ export default async function DevlogPost({ params }: { params: Promise<{ slug: s
 
   return (
     <main className="container mx-auto px-4 py-24 min-h-screen">
+      <DevlogTracker />
       <div className="max-w-3xl mx-auto">
         <Link
           href="/devlogs"
