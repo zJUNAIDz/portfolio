@@ -20,8 +20,6 @@ export const personalInfo = {
   titleJp: "バックエンド志向のフルスタック開発者",
   email: "junaidshaikh3967@gmail.com",
   location: "Mumbai, IN",
-  // Mumbai
-  coords: "19.08°N 72.88°E",
   sns: [
     {
       label: "Github",

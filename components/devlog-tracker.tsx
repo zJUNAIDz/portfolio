@@ -9,7 +9,7 @@ export default function DevlogPathTracker() {
       if (typeof window !== "undefined") {
         sessionStorage.setItem("lastDevlog", window.location.pathname)
       }
-    } catch (e) {
+    } catch {
       // ignore storage failures
     }
   }, [])

@@ -38,10 +38,7 @@ export function HeroSection({ locale }: { locale: Locale }) {
           <dt className="text-muted-foreground">{t.location}</dt>
           <dd>{personalInfo.location}</dd>
         </div>
-        <div className="flex items-baseline justify-between gap-4 border-b hairline py-2">
-          <dt className="text-muted-foreground">{t.coord}</dt>
-          <dd>{personalInfo.coords}</dd>
-        </div>
+
       </dl>
 
       {/* Intro */}
