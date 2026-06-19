@@ -1,78 +1,96 @@
-"use client"
-
 import { projectsContent } from "@/data/portfolio-data"
-import { ExternalLink, Github } from "./icons"
-import { Badge } from "./ui/badge"
-import { Button } from "./ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
+import { ArrowUpRight, Github } from "lucide-react"
+import { Section } from "./section"
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="py-20">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            {projectsContent.title}
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            {projectsContent.description}
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {projectsContent.projects.map((project, index) => (
-            <div key={project.title}>
-              <Card className="h-full hover:shadow-lg transition-all duration-300 group">
-                <CardHeader>
-                  <div className="flex items-start justify-between">
-                    <CardTitle className="group-hover:text-primary transition-colors text-lg">
-                      {project.title}
-                    </CardTitle>
-                  </div>
-                  <CardDescription className="text-left leading-relaxed">
-                    {project.description}
-                  </CardDescription>
-                </CardHeader>
-
-                <CardContent className="space-y-4">
-                  {/* Technologies */}
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech) => (
-                      <Badge key={tech} variant="outline" className="text-xs">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-
-                  {/* Action Buttons */}
-                  <div className="flex gap-2">
-                    <Button variant="outline" size="sm" asChild className="flex-1 hover:bg-primary/20">
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="w-4 h-4 mr-2" />
-                        Code
-                      </a>
-                    </Button>
-                    {project.demo && (
-                      <Button variant="outline" size="sm" asChild className="flex-1 hover:bg-primary/20">
-                        <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="w-4 h-4 mr-2" />
-                          Demo
-                        </a>
-                      </Button>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
+    <Section
+      id="projects"
+      index={projectsContent.index}
+      title={projectsContent.title}
+      meta={projectsContent.meta}
+      description={projectsContent.description}
+    >
+      <div className="border-t hairline">
+        {projectsContent.projects.map((project) => (
+          <article
+            key={project.id}
+            className="grid gap-6 border-b hairline py-10 md:grid-cols-12"
+          >
+            {/* Meta column */}
+            <div className="md:col-span-3">
+              <span className="font-mono text-3xl text-foreground/25">
+                {project.id}
+              </span>
+              <p className="mt-2 font-mono text-xs text-muted-foreground">
+                {project.period}
+              </p>
+              <div className="mt-4 flex flex-col items-start gap-2">
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 font-mono text-xs text-foreground/70 transition-colors hover:text-foreground"
+                >
+                  <Github className="h-3.5 w-3.5" />
+                  Source
+                </a>
+                {project.demo && (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-2 font-mono text-xs text-foreground/70 transition-colors hover:text-foreground"
+                  >
+                    <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    Live demo
+                  </a>
+                )}
+              </div>
             </div>
-          ))}
-        </div>
 
-        <div className="text-center mt-16">
-          <p className="text-muted-foreground mb-6">
-            Not really proud of these projects, but they showcase my learning journey and I am currently working on more complex applications.
-          </p>
-        </div>
+            {/* Content column */}
+            <div className="md:col-span-9">
+              <h3 className="text-2xl font-semibold tracking-tight">
+                {project.title}
+              </h3>
+              <p className="mt-1 text-muted-foreground">{project.subtitle}</p>
+              <p className="mt-4 max-w-2xl leading-relaxed text-foreground/90">
+                {project.summary}
+              </p>
+
+              <ul className="mt-5 space-y-3">
+                {project.highlights.map((highlight, i) => (
+                  <li
+                    key={i}
+                    className="flex gap-4 text-sm leading-relaxed text-foreground/80"
+                  >
+                    <span className="mt-0.5 shrink-0 font-mono text-xs text-muted-foreground">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span>{highlight}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-5 flex flex-wrap gap-2">
+                {project.tech.map((tech) => (
+                  <span
+                    key={tech}
+                    className="border hairline px-2.5 py-1 font-mono text-xs text-foreground/80"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </article>
+        ))}
       </div>
-    </section>
+
+      <p className="mt-8 font-mono text-sm text-muted-foreground">
+        {projectsContent.outro}
+      </p>
+    </Section>
   )
 }

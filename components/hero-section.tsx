@@ -1,42 +1,67 @@
-"use client"
-
 import { heroContent, personalInfo } from "@/data/portfolio-data"
-import { Paperclip } from "lucide-react"
+import { ArrowUpRight } from "lucide-react"
 import Link from "next/link"
 import { Socials } from "./socials"
-import { Button } from "./ui/button"
 
 export function HeroSection() {
+  const year = new Date().getFullYear()
+
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative">
-      <div className="container mx-auto px-4 z-10">
-        <div
-          className="max-w-4xl mx-auto text-center"
-        >
-          <h1 className="text-4xl md:text-7xl font-bold mb-4 flex flex-col">
-            <span className="text-primary text-lg opacity-75">{personalInfo.nameJp}</span>
-            {personalInfo.name}
-          </h1>
+    <section
+      id="home"
+      className="bg-spec-grid border-b hairline px-6 py-14 sm:px-10 md:py-20"
+    >
+      {/* Masthead bar */}
+      <div className="flex items-baseline justify-between border-b hairline pb-3">
+        <span className="eyebrow text-muted-foreground">{heroContent.index}</span>
+        <span className="font-mono text-xs text-muted-foreground">{year}</span>
+      </div>
 
-          <h2 className="text-xl md:text-2xl text-muted-foreground mb-6 flex flex-col">
-            <span className="text-primary text-lg opacity-75">{personalInfo.titleJp}</span>
-            {personalInfo.title}
-          </h2>
+      {/* Identity */}
+      <div className="mt-10">
+        <p className="font-mono text-sm text-muted-foreground">
+          {personalInfo.nameJp}
+        </p>
+        <h1 className="mt-2 text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl">
+          {personalInfo.name}
+        </h1>
+        <p className="mt-4 text-lg text-muted-foreground sm:text-xl">
+          {personalInfo.title}
+        </p>
+      </div>
 
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
-            {heroContent.description}
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button variant="outline" size="lg" asChild>
-              <Link aria-label="View resume" href={personalInfo.resumeUrl} target="_blank">
-                <Paperclip className="w-4 h-4 mr-2" />
-                View Resume
-              </Link>
-            </Button>
-          </div>
-          <Socials />
+      {/* Spec rows */}
+      <dl className="mt-8 grid max-w-lg grid-cols-1 gap-x-10 font-mono text-xs sm:grid-cols-2">
+        <div className="flex items-baseline justify-between gap-4 border-b hairline py-2">
+          <dt className="text-muted-foreground">LOCATION</dt>
+          <dd>{personalInfo.location}</dd>
         </div>
+        <div className="flex items-baseline justify-between gap-4 border-b hairline py-2">
+          <dt className="text-muted-foreground">COORD</dt>
+          <dd>{personalInfo.coords}</dd>
+        </div>
+      </dl>
+
+      {/* Intro */}
+      <p className="mt-10 max-w-2xl text-base leading-relaxed sm:text-lg">
+        {heroContent.intro}
+      </p>
+      <p className="mt-4 max-w-2xl font-mono text-sm leading-relaxed text-muted-foreground">
+        {heroContent.tagline}
+      </p>
+
+      {/* Actions */}
+      <div className="mt-10 flex flex-col items-start gap-6 sm:flex-row sm:items-center">
+        <Link
+          aria-label="View resume"
+          href={personalInfo.resumeUrl}
+          target="_blank"
+          className="group inline-flex items-center gap-2 border border-foreground bg-foreground px-5 py-2.5 font-mono text-xs uppercase tracking-widest text-background transition-colors hover:bg-transparent hover:text-foreground"
+        >
+          View résumé
+          <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        </Link>
+        <Socials />
       </div>
     </section>
   )

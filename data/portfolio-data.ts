@@ -15,11 +15,13 @@ import {
 
 export const personalInfo = {
   name: "Junaid Shaikh",
-  nameJp: "シェク ジュナエッド",
-  title: "Full-Stack Developer",
-  titleJp: "フルスタックWebエンジニア",
+  nameJp: "シェク・ジュナエッド",
+  title: "Backend-focused Fullstack Developer",
+  titleJp: "バックエンド志向のフルスタック開発者",
   email: "junaidshaikh3967@gmail.com",
-  location: "India",
+  location: "Mumbai, IN",
+  // Mumbai
+  coords: "19.08°N 72.88°E",
   sns: [
     {
       label: "Github",
@@ -57,195 +59,260 @@ export const personalInfo = {
 };
 
 export const heroContent = {
-  subtitle: "Full-Stack Developer",
-  description:
-    "Recent Grad from India, Building full-stack web apps with a backend bias, tinkering on Linux, learning Japanese, and pretending Leetcode is fun.",
+  index: "INDEX",
+  // Short, confident, with a bit of voice. No self-deprecation.
+  intro:
+    "I build backends that hold up under load — async job pipelines, type-safe APIs, and LLM workflows on a TypeScript / Node / Postgres stack. I care about the unglamorous parts: idempotency, crash recovery, and data that stays correct when things go sideways.",
+  tagline: "Architected a production-bound AI platform backend from scratch. Now looking for the next hard problem.",
 };
 
 export const aboutContent = {
-  title: "About Me",
+  index: "00",
+  title: "About",
+  meta: "whoami",
+  // 1–2 tight paragraphs, confident with personality.
+  bio: [
+    "I'm a recent Information Technology grad from the University of Mumbai (8.38 CGPI) who fell hard for the backend. Most people see the UI; I think about what's happening behind it — the queue draining jobs, the transaction holding a write together, the worker recovering from a crash without losing state.",
+    "At Slaab.ai I architected the backend of an AI SEO platform from scratch and learned what \"production-bound\" actually demands. The rest of the time I'm on Linux breaking and fixing my own setup, chipping away at Japanese (JLPT N5), and grinding LeetCode while pretending it's fun.",
+  ],
+  facts: [
+    { label: "Based in", value: "Mumbai, India" },
+    { label: "Focus", value: "Backend systems · async job processing · APIs" },
+    { label: "Daily driver", value: "Linux (Fedora) · Neovim-curious" },
+    { label: "Learning", value: "日本語 — JLPT N5" },
+    { label: "Education", value: "BSc IT, University of Mumbai · 8.38 CGPI" },
+  ],
   interests: [
     "Distributed Systems",
-    "Cloud Architecture",
-    "Microservices",
+    "Async Job Processing",
     "API Design",
-    "Performance Optimization",
-    "System Scalability",
-  ],
-  personalTraits: [
-    {
-      title: "Linux & Web Development Enthusiast",
-      description: "Exploring Linux systems and building web applications",
-      icon: Monitor,
-    },
-    {
-      title: "日本語学習者",
-      description:
-        "Learning Japanese Language and culture. Currently at N5 level.",
-      icon: MapPin,
-    },
+    "Databases & Indexing",
+    "AI / LLM Workflows",
+    "Linux & Self-hosting",
   ],
 };
 
 export const skillsContent = {
-  title: "Skills & Technologies",
-  description: "Technologies and tools I use to build stuff",
+  index: "03",
+  title: "Skills",
+  meta: "stack.toml",
+  description: "What I reach for when I build.",
   categories: {
     languages: {
-      label: "Programming Languages",
+      label: "Languages",
       icon: Code2,
-      skills: [
-        "Javascript/TypeScript",
-        "Go",
-        "Core Java",
-        "Basic C/C++",
-        "Basic Lua",
-      ],
+      skills: ["TypeScript / JavaScript", "Go", "Core Java", "C / C++ (basic)"],
     },
-    frameworks: {
-      label: "Frameworks & Technologies",
-      icon: Globe,
-      skills: [
-        "Node.js/Bun.js",
-        "React.js",
-        "Next.js",
-        "Express.js",
-        "Hono.js",
-        "Gin",
-        "PrismaORM",
-        "DrizzleORM",
-        "Mastra.ai",
-        "tRPC",
-        "TanStack Query",
-        "Zustand",
-        "Redux/Toolkit",
-        "Tailwind CSS",
-        "Websocket/Socket.io",
-        "WebRTC",
-      ],
-    },
-    databases: {
-      label: "Databases",
-      icon: Database,
-      skills: ["PostgreSQL/MySQL", "MongoDB", "Redis", "SQLite"],
-    },
-    otherTechs: {
-      label: "Other Technologies",
+    backend: {
+      label: "Backend",
       icon: Cloud,
       skills: [
-        "Basic AWS",
-        "Docker",
-        "Git",
-        "Bash",
-        "Postman",
-        "PG Admin",
-        "Burp Suite",
-        "GNU/Linux",
+        "Node.js / Bun",
+        "Hono.js",
+        "Express.js",
+        "tRPC",
+        "BullMQ / Redis Queues",
+        "Mastra.ai (agents)",
+        "WebSocket / Socket.io",
+      ],
+    },
+    frontend: {
+      label: "Frontend",
+      icon: Globe,
+      skills: [
+        "React.js",
+        "Next.js",
+        "TanStack Query",
+        "Zustand",
+        "Redux / RTK",
+        "Tailwind CSS",
+      ],
+    },
+    data: {
+      label: "Data & Caching",
+      icon: Database,
+      skills: [
+        "PostgreSQL",
+        "Prisma",
+        "Drizzle",
+        "sqlc",
+        "MongoDB",
+        "Redis",
+        "SQLite",
+      ],
+    },
+    devops: {
+      label: "DevOps & Tooling",
+      icon: Monitor,
+      skills: [
+        "Docker / Podman",
+        "Nginx",
+        "AWS (EC2, ECS, S3, RDS, Lambda)",
+        "Git / GitHub",
+        "Linux / Bash",
       ],
     },
   },
 };
 
 export const experienceContent = {
-  title: "Professional Experience",
-  description:
-    "A summary of my career journey and contributions as a developer",
+  index: "01",
+  title: "Experience",
+  meta: "git log --reverse",
+  description: "Where I've shipped real systems.",
   experiences: [
     {
       company: "Slaab.ai",
-      position: "Junior Full-Stack Developer",
+      position: "Full-Stack Developer",
       location: "Remote, India",
-      duration: "May 2025 - July 2025",
+      duration: "May 2025 — Jul 2025",
       type: "Full-time",
-      description:
-        "Worked on an internal, pre-launch AI-powered SEO platform intended for B2B customers, focused on automated website audits, keyword research, and content analysis. Contributed primarily to backend systems and agentic workflows, while also shipping frontend features and performance improvements during active development.",
+      summary:
+        "Architected and built the backend from scratch for a production-bound AI SEO platform — automated audits, keyword research, and AI content generation — owning the systems work end to end and shipping the frontend alongside it.",
       achievements: [
-        "Designed and implemented the backend architecture for an AI-driven SEO audit system during early-stage product development.",
-        "Built agentic LLM workflows using Mastra.ai to coordinate crawl analysis, SERP evaluation, audit reasoning, and actionable fix generation.",
-        "Integrated DataForSEO, FireCrawl, and Puppeteer to collect crawl data, keyword intelligence, and page-level signals for downstream analysis.",
-        "Implemented an async, job-based execution model using BullMQ to safely handle long-running audits with retries, idempotency, and failure isolation.",
-        "Used PostgreSQL as a persistent store for job state and intermediate results to support retries and client polling.",
-        "Developed REST APIs for initiating audits and querying progress and results during internal testing.",
-        "Reworked an existing UI by introducing structured client and server state management, reducing render overhead and improving responsiveness.",
+        "Designed the backend architecture from zero: 14 REST endpoints, a tRPC layer, and 200+ TypeScript modules spanning audit, content, and agent domains.",
+        "Built a 10-stage agentic audit pipeline orchestrating LLM reasoning over external data (SERP, Lighthouse, security headers, crawl) to turn raw site data into scored, actionable fixes.",
+        "Engineered an async, queue-based execution model (BullMQ + Redis) to run multi-minute audits off the request path — fault-tolerant workers, graceful shutdown, and Postgres-backed job state for crash recovery.",
+        "Wrote idempotent integrations with DataForSEO, FireCrawl, and Google Lighthouse, normalizing large-scale crawl/SERP data and tracking per-job token & API usage to keep LLM cost in check.",
+        "Implemented a conversational SEO agent with persistent memory and tool-calling, plus a 3-stage article writer (outline → section generation → humanization).",
+        "Shipped the Next.js 15 / React 19 frontend: Supabase SSR auth with session middleware, TanStack Query data layer, Zustand state, and live job-progress polling that recovers in-flight jobs across reloads.",
       ],
       technologies: [
         "TypeScript",
-        "Node.js / Bun.js",
+        "Bun / Node.js",
         "Hono.js",
-        "React.js / Next.js",
+        "tRPC",
+        "PostgreSQL (Supabase)",
+        "BullMQ / Redis",
+        "Mastra.ai",
+        "Next.js 15 / React 19",
         "TanStack Query",
         "Zustand",
-        "PostgreSQL (Supabase)",
-        "Mastra.ai",
-        "DataForSEO API",
-        "FireCrawl",
-        "Puppeteer",
-        "BullMQ",
         "Docker",
       ],
       icon: Building2,
-      color: "from-blue-500 to-blue-600",
     },
   ],
 };
 
 // Projects Section
 export const projectsContent = {
-  title: "Featured Projects",
-  description: "A showcase of some of my projects",
+  index: "02",
+  title: "Selected Work",
+  meta: "~/projects",
+  description:
+    "Side projects where I got to make the hard calls myself — pagination strategy, real-time consistency, deployment, all of it.",
   projects: [
     {
-      title: "Relaycat - A Discord-like Chat App",
-      description: "A Discord-like chat application.",
+      id: "001",
+      title: "Relaycat",
+      subtitle: "Discord-like real-time chat platform",
+      period: "Aug 2023 — Mar 2024",
+      summary:
+        "A full Discord-style chat app: servers, channels, roles, real-time messaging, media uploads, and voice — built as a Turborepo monorepo with end-to-end type safety.",
+      highlights: [
+        "Turborepo monorepo (Bun/Hono API + Next.js client) with a shared Zod contract package enforcing type safety across 25 REST endpoints.",
+        "Keyset pagination on UUIDv7 keys with composite indexes on hot foreign keys — channel-history reads stay constant-time regardless of message volume.",
+        "Guest/Mod/Admin RBAC enforced inside ACID transactions at the query layer; optimistic real-time messaging over Socket.io with TanStack Query cache mutations (instant edits/deletes, zero refetch).",
+        "Presigned S3 uploads (7 media types, server-enforced limits), OAuth + verified-email auth via Better Auth, multi-stage Docker builds behind an Nginx TLS reverse proxy.",
+      ],
       tech: [
         "Next.js",
-        "Node.js",
-        "Hono.js",
+        "Hono.js / Bun",
         "Socket.io",
-        "PostgreSQL",
-        "Prisma",
-        "Zustand",
+        "Drizzle / Postgres",
+        "Better Auth",
+        "LiveKit",
         "TanStack Query",
-        "Tailwind CSS",
+        "MinIO (S3)",
+        "Docker",
       ],
       github: "https://github.com/zjunaidz/relaycat",
     },
     {
-      title: "Notion knock-off",
-      description: "A simple Notion-like application.",
+      id: "002",
+      title: "Notion Lite",
+      subtitle: "Collaborative document workspace",
+      period: "Nov 2023 — Dec 2023",
+      summary:
+        "A real-time, Notion-style workspace with live cursors, presence, and conflict-free concurrent editing — infinitely nested pages and the full publish/share flow.",
+      highlights: [
+        "Conflict-free collaborative editing via Yjs + Convex reactive queries, backed by a Cloudflare Worker + Durable Object for cursor/presence coordination.",
+        "16 Convex serverless functions and 2 composite indexes powering infinitely nested page trees, recursive archive/restore, and orphan-safe re-parenting with server-side ownership enforcement.",
+        "Publish/share flows with public preview routes; a 60+ component editor stack (BlockNote rich text, cover images, emoji icons, full-text search, dark/light, mobile-responsive).",
+      ],
       tech: [
         "Next.js",
-        "React",
-        "Tailwind CSS",
-        "Zustand",
-        "Prisma",
-        "PostgreSQL",
         "Convex",
+        "Yjs",
+        "Cloudflare Workers + Durable Objects",
+        "Clerk",
+        "BlockNote",
+        "Tailwind CSS",
       ],
       github: "https://github.com/zjunaidz/notion-lite",
       demo: "https://potion.zjunaidz.me",
     },
     {
+      id: "003",
       title: "Game Explorer",
-      description: "A simple Game Explorer.",
-      tech: ["React.js", "Zustand", "Tailwind CSS", "RAWG API"],
+      subtitle: "Game-discovery SPA over the RAWG API",
+      period: "Apr 2023 — Jun 2023",
+      summary:
+        "A responsive discovery app over RAWG's 880K+ game catalog, with multi-criteria filtering, infinite scroll, and a caching strategy that all but eliminates redundant fetches.",
+      highlights: [
+        "Multi-criteria filtering (genre, platform, sort, search) + infinite-scroll pagination across 25+ components and 11 custom hooks.",
+        "Pre-seeded genre/platform lists as TanStack Query initialData with a 24-hour staleTime — zero-network first paint of filter sidebars, no repeat fetches in the cache window.",
+        "Refactored a prop-drilled tree to a Zustand store + a generic ApiClient<T> over Axios; route-level code-splitting, dynamic SEO, and a multi-stage Docker build (Bun → Nginx).",
+      ],
+      tech: [
+        "React",
+        "TypeScript",
+        "Zustand",
+        "TanStack Query",
+        "Axios",
+        "RAWG API",
+        "Docker",
+      ],
       github: "https://github.com/zjunaidz/game-hub",
       demo: "https://igdb.zjunaidz.me",
     },
     {
-      title: "Simple Go API",
-      description: "Simple REST API.",
+      id: "004",
+      title: "Go REST API",
+      subtitle: "Learning Go, the systems way",
+      period: "2024",
+      summary:
+        "A compact REST API I built to get fluent in Go — clean handler structure, SQL over an ORM, containerized for deployment.",
+      highlights: [
+        "Idiomatic Go service with Gin, hand-written SQL against LibSQL, and a Dockerfile tuned for small images — a deliberate exercise in writing Go that reads like Go.",
+      ],
       tech: ["Go", "Gin", "LibSQL", "Docker"],
       github: "https://github.com/zjunaidz/gin-rest-api",
     },
   ],
+  outro:
+    "More on my GitHub — and I'm always mid-build on something bigger.",
 };
 
-// Contact Section
+// Footer / contact
+export const footerContent = {
+  index: "04",
+  title: "Get in touch",
+  meta: "mailto:",
+  blurb:
+    "Open to backend / fullstack roles and interesting problems. The fastest way to reach me is email — I read everything.",
+  links: [
+    { label: "GitHub", icon: Github, href: personalInfo.github },
+    { label: "LinkedIn", icon: Linkedin, href: personalInfo.linkedin },
+    { label: "Email", icon: Mail, href: `mailto:${personalInfo.email}` },
+  ],
+};
+
+// Kept for backward-compat with any existing imports.
 export const contactContent = {
   title: "Get In Touch",
-  description:
-    "Let's discuss how we can work together to build something amazing. I'm always open to new opportunities and interesting projects.",
+  description: footerContent.blurb,
   contactInfo: [
     {
       icon: Mail,
@@ -271,14 +338,5 @@ export const contactContent = {
       value: personalInfo.location,
       href: "#",
     },
-  ],
-};
-
-// Footer
-export const footerContent = {
-  links: [
-    { label: "GitHub", icon: Github, href: personalInfo.github },
-    { label: "LinkedIn", icon: Linkedin, href: personalInfo.linkedin },
-    { label: "Email", icon: Mail, href: `mailto:${personalInfo.email}` },
   ],
 };

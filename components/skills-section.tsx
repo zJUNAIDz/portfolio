@@ -1,53 +1,38 @@
-"use client"
-
 import { skillsContent } from "@/data/portfolio-data"
-import { Badge } from "./ui/badge"
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
+import { Section } from "./section"
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="py-20">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            {skillsContent.title}
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            {skillsContent.description}
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8 md:mx-20">
-          {Object.entries(skillsContent.categories).map(([key, category], index) => (
-            <div key={key}>
-              <Card className="h-full hover:shadow-md transition-shadow">
-                <CardHeader className="pb-4">
-                  <CardTitle className="flex items-center gap-3 text-lg">
-                    <span className="text-primary">
-                      <category.icon size={22} />
-                    </span>
-                    {category.label}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    {category.skills.map((skill, skillIndex) => (
-                      <div key={skill}>
-                        <Badge
-                          variant="outline"
-                          className="hover:bg-primary/10 transition-colors text-sm"
-                        >
-                          {skill}
-                        </Badge>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+    <Section
+      id="skills"
+      index={skillsContent.index}
+      title={skillsContent.title}
+      meta={skillsContent.meta}
+      description={skillsContent.description}
+    >
+      <div className="border-t hairline">
+        {Object.entries(skillsContent.categories).map(([key, category]) => (
+          <div
+            key={key}
+            className="grid grid-cols-1 gap-3 border-b hairline py-5 md:grid-cols-4"
+          >
+            <div className="flex items-center gap-2.5 text-foreground/90">
+              <category.icon className="h-4 w-4 text-muted-foreground" />
+              <span className="font-medium">{category.label}</span>
             </div>
-          ))}
-        </div>
+            <div className="flex flex-wrap gap-2 md:col-span-3">
+              {category.skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="border hairline px-2.5 py-1 font-mono text-xs text-foreground/80 transition-colors hover:border-foreground hover:text-foreground"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
-    </section>
+    </Section>
   )
 }

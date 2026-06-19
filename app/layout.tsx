@@ -4,11 +4,16 @@ import { SeoJsonLd } from '@/components/seo-jsonld';
 import { rootMetadata } from '@/lib/metadata';
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from 'next';
-import { Geist } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import { ReactNode } from "react";
 
 export const geistSans = Geist({
   variable: "--font-geist-sans",
+  subsets: ["latin"],
+})
+
+export const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
 })
 
@@ -20,7 +25,7 @@ export default function RootLayout({
   children: ReactNode;
 }) {
   return (
-    <html lang="en" className={`${geistSans.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
       <body className="antialiased bg-background text-foreground transition-colors duration-50">
         <Navigation /> 
         {children}

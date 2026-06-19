@@ -1,105 +1,66 @@
-"use client"
-
 import { experienceContent } from "@/data/portfolio-data"
-import { Calendar, MapPin } from "lucide-react"
-import { Badge } from "./ui/badge"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
+import { Section } from "./section"
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="py-20 bg-muted/10">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            {experienceContent.title}
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            {experienceContent.description}
-          </p>
-        </div>
-
-        <div className="max-w-4xl mx-auto">
-          {experienceContent.experiences.map((experience, index) => (
-            <div
-              key={experience.company}
-              className="relative mb-12 last:mb-0"
-            >
-              {/* Timeline line */}
-              {index < experienceContent.experiences.length - 1 && (
-                <>
-                  <div className="absolute left-6 top-16 w-px h-24 bg-border" />
-
-                  <div className="hidden md:block absolute md:left-4 top-8 w-4 h-4 bg-primary rounded-full border-4 border-background shadow-md" />
-                </>
-              )}
-
-              <div className="md:ml-16">
-                <Card className="hover:shadow-md transition-shadow">
-                  <CardHeader>
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                      <div>
-                        <CardTitle className="text-xl mb-1">
-                          {experience.position}
-                        </CardTitle>
-                        <CardDescription className="text-lg font-semibold text-primary">
-                          {experience.company}
-                        </CardDescription>
-                      </div>
-                      <div className="flex flex-col sm:text-right text-sm text-muted-foreground">
-                        <div className="flex items-center gap-1 mb-1">
-                          <Calendar size={14} />
-                          {experience.duration}
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <MapPin size={14} />
-                          {experience.location}
-                        </div>
-                      </div>
-                    </div>
-                  </CardHeader>
-
-                  <CardContent className="space-y-6">
-                    <p className="text-muted-foreground leading-relaxed">
-                      {experience.description}
-                    </p>
-
-                    {/* Achievements */}
-                    <div>
-                      <h3 className="font-semibold mb-3 text-sm">Key Achievements:</h3>
-                      <ul className="space-y-2">
-                        {experience.achievements.map((achievement, i) => (
-                          <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
-                            <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
-                            {achievement}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Technologies */}
-                    <div>
-                      <h3 className="font-semibold mb-3 text-sm">Technologies Used:</h3>
-                      <div className="flex flex-wrap gap-2">
-                        {experience.technologies.map((tech) => (
-                          <Badge key={tech} variant="outline" className="text-xs">
-                            {tech}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+    <Section
+      id="experience"
+      index={experienceContent.index}
+      title={experienceContent.title}
+      meta={experienceContent.meta}
+      description={experienceContent.description}
+    >
+      <div className="space-y-14">
+        {experienceContent.experiences.map((experience) => (
+          <article key={experience.company}>
+            {/* Header row */}
+            <div className="flex flex-col gap-1 border-b hairline pb-4 sm:flex-row sm:items-baseline sm:justify-between">
+              <div className="flex items-baseline gap-3">
+                <h3 className="text-xl font-semibold tracking-tight">
+                  {experience.company}
+                </h3>
+                <span className="text-muted-foreground">
+                  {experience.position}
+                </span>
+              </div>
+              <div className="font-mono text-xs text-muted-foreground">
+                {experience.duration} · {experience.location}
               </div>
             </div>
-          ))}
 
-          <div className="text-center mt-12">
-            <p className="text-muted-foreground italic">
-              * You can help me add more experience (¬‿¬)
+            <p className="mt-5 max-w-3xl leading-relaxed text-foreground/90">
+              {experience.summary}
             </p>
-          </div>
-        </div>
+
+            {/* Achievements */}
+            <ul className="mt-6 space-y-3">
+              {experience.achievements.map((achievement, i) => (
+                <li
+                  key={i}
+                  className="flex gap-4 text-sm leading-relaxed text-foreground/80"
+                >
+                  <span className="mt-0.5 shrink-0 font-mono text-xs text-muted-foreground">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span>{achievement}</span>
+                </li>
+              ))}
+            </ul>
+
+            {/* Tech */}
+            <div className="mt-6 flex flex-wrap gap-2">
+              {experience.technologies.map((tech) => (
+                <span
+                  key={tech}
+                  className="border hairline px-2.5 py-1 font-mono text-xs text-foreground/80"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </article>
+        ))}
       </div>
-    </section>
+    </Section>
   )
 }

@@ -4,7 +4,7 @@ export const rootMetadata: Metadata = {
   metadataBase: new URL("https://zjunaidz.me"),
   title: "Junaid Shaikh - Full-Stack Web Developer",
   description:
-    "Full-Stack Developer who likes coding, Linux, and learning Japanese.",
+    "Backend-focused fullstack developer. Async job pipelines, type-safe APIs, and AI/LLM workflows on TypeScript, Node, and Postgres.",
   applicationName: "zjunaidz Portfolio",
   authors: [{ name: "Junaid Shaikh", url: "https://zjunaidz.me" }],
   creator: "Junaid Shaikh",
@@ -36,7 +36,7 @@ export const rootMetadata: Metadata = {
   openGraph: {
     title: "Junaid Shaikh - Full-Stack Web Developer",
     description:
-      "Full-Stack Developer who likes coding, Linux, and learning Japanese.",
+      "Backend-focused fullstack developer. Async job pipelines, type-safe APIs, and AI/LLM workflows on TypeScript, Node, and Postgres.",
     images: [
       {
         url: "/api/og",
@@ -54,7 +54,7 @@ export const rootMetadata: Metadata = {
     card: "summary_large_image",
     title: "Junaid Shaikh - Full-Stack Developer",
     description:
-      "Full-Stack Developer who likes coding, Linux, and learning Japanese.",
+      "Backend-focused fullstack developer. Async job pipelines, type-safe APIs, and AI/LLM workflows on TypeScript, Node, and Postgres.",
     images: ["/api/og"],
   },
   verification: {

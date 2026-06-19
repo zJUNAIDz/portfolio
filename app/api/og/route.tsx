@@ -7,7 +7,7 @@ export const dynamic = 'force-dynamic'
 export async function GET(req: NextRequest) {
   // const { searchParams } = new URL(req.url)
   const title = 'Junaid Shaikh'
-  const description = 'Full-Stack Developer'
+  const description = 'Backend-focused Fullstack Developer'
   const skills = ['TypeScript', 'Go', 'DSA', 'React', 'Hono', 'Docker', 'PostgreSQL', 'Linux']
   return new ImageResponse(
     (

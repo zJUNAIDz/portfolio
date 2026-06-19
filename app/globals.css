@@ -46,8 +46,11 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(0.985 0.01 95);
-  --foreground: oklch(0.145 0 0);
+  /* Warm paper base for the spec-sheet look */
+  --background: oklch(0.987 0.006 95);
+  --foreground: oklch(0.16 0.004 75);
+  /* Visible-but-quiet hairline for ledger rules */
+  --hairline: oklch(0.16 0.004 75 / 0.14);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -61,8 +64,8 @@
   --accent: oklch(91.965% 0.00106 11.735);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
+  --border: oklch(0.88 0.004 75);
+  --input: oklch(0.88 0.004 75);
   --ring: oklch(0.708 0 0);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
@@ -94,6 +97,39 @@
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Account for the sticky nav when jumping to anchors */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* Spec-sheet selection */
+::selection {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+/* Hairline rule used to frame the document column */
+.hairline {
+  border-color: var(--hairline);
+}
+
+/* Faint dotted grid backdrop — barely-there, "engineering paper" */
+.bg-spec-grid {
+  background-image: radial-gradient(
+    var(--hairline) 1px,
+    transparent 1px
+  );
+  background-size: 22px 22px;
+}
+
+/* Mono eyebrow label used across section headers */
+.eyebrow {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
 /* Custom scrollbar */

@@ -11,12 +11,9 @@ export function SeoJsonLd() {
     personalInfo.instagram,
   ].filter(Boolean)
 
-  const skills = [
-    ...skillsContent.categories.languages.skills,
-    ...skillsContent.categories.frameworks.skills,
-    ...skillsContent.categories.databases.skills,
-    ...skillsContent.categories.otherTechs.skills,
-  ].slice(0, 25)
+  const skills = Object.values(skillsContent.categories)
+    .flatMap((category) => category.skills)
+    .slice(0, 25)
 
   const websiteLd = {
     "@context": "https://schema.org",
