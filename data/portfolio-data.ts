@@ -288,6 +288,30 @@ export const projectsContent = {
       tech: ["Go", "Gin", "LibSQL", "Docker"],
       github: "https://github.com/zjunaidz/gin-rest-api",
     },
+    {
+      id: "005",
+      title: "Redis Rate Limiter",
+      subtitle: "Published npm library · token bucket in Lua",
+      period: "2025",
+      summary:
+        "A published npm package that does rate limiting the way it should be done: the entire token-bucket decision runs inside Redis as an atomic Lua script, so every check is a single network round-trip with no race conditions. Drop-in RateLimiter class plus optional Hono middleware.",
+      highlights: [
+        "Token bucket implemented end-to-end in a Redis Lua script — read state, refill by elapsed time, cap, and decrement all happen atomically server-side, killing the check-then-act race that breaks naive limiters under concurrency.",
+        "One EVALSHA call per request: the script is cached in Redis, so each rate-limit check costs a single round-trip regardless of load — designed to sit on the hot path without becoming the bottleneck.",
+        "Framework-agnostic RateLimiter core with an optional Hono middleware that returns a clean 429 JSON response; fully typed, configurable maxRequests / windowSizeInSeconds, shipped as ESM via tsup.",
+        "Published to npm as @zjunaidz/rate-limiter — installable, documented, and reusable in real projects, not a throwaway demo.",
+      ],
+      tech: [
+        "TypeScript",
+        "Redis",
+        "Lua",
+        "ioredis",
+        "Hono.js",
+        "tsup",
+        "npm",
+      ],
+      github: "https://github.com/zJUNAIDz/redis-lua-rate-limiter",
+    },
   ],
   outro:
     "More on my GitHub — and I'm always mid-build on something bigger.",

@@ -179,6 +179,22 @@ export const projectsContent = {
       tech: enProjects.projects[3].tech,
       github: enProjects.projects[3].github,
     },
+    {
+      id: enProjects.projects[4].id,
+      title: enProjects.projects[4].title,
+      subtitle: "公開済み npm ライブラリ · Lua で実装したトークンバケット",
+      period: "2025年",
+      summary:
+        "レート制限を「あるべき形」で実現する、公開済みの npm パッケージ。トークンバケットの判定処理を丸ごと Redis 内のアトミックな Lua スクリプトとして実行するため、各チェックはネットワーク往復 1 回で済み、競合状態が一切発生しません。そのまま使える RateLimiter クラスと、任意の Hono ミドルウェアを同梱。",
+      highlights: [
+        "トークンバケットを Redis の Lua スクリプトでエンドツーエンドに実装——状態の読み取り、経過時間に応じた補充、上限のキャップ、減算をすべてサーバー側でアトミックに実行し、素朴な実装が並行時に陥る check-then-act の競合を根絶。",
+        "リクエストごとに EVALSHA 呼び出し 1 回:スクリプトを Redis にキャッシュするため、負荷に関係なく各チェックは往復 1 回で完結。ボトルネックにならず、ホットパスに置けるよう設計。",
+        "フレームワーク非依存の RateLimiter コアと、429 のクリーンな JSON レスポンスを返す任意の Hono ミドルウェア。完全に型付けされ、maxRequests / windowSizeInSeconds を設定可能、tsup により ESM として配布。",
+        "@zjunaidz/rate-limiter として npm に公開——インストール可能でドキュメント付き、実プロジェクトで再利用できる。使い捨てのデモではありません。",
+      ],
+      tech: enProjects.projects[4].tech,
+      github: enProjects.projects[4].github,
+    },
   ],
   outro: "他のプロジェクトは GitHub に。そしていつも、もっと大きな何かを作っている途中です。",
 };
