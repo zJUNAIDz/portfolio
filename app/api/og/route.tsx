@@ -1,11 +1,9 @@
 import { ImageResponse } from 'next/og'
-import type { NextRequest } from 'next/server'
 
 export const runtime = 'edge'
 export const dynamic = 'force-dynamic'
 
-export async function GET(req: NextRequest) {
-  // const { searchParams } = new URL(req.url)
+export async function GET() {
   const title = 'Junaid Shaikh'
   const description = 'Backend-focused Fullstack Developer'
   const skills = ['TypeScript', 'Go', 'DSA', 'React', 'Hono', 'Docker', 'PostgreSQL', 'Linux']
