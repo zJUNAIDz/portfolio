@@ -1,8 +1,10 @@
-import { footerContent, personalInfo } from "@/data/portfolio-data"
+import { getContent, ui, type Locale } from "@/lib/i18n"
 import { ArrowUpRight } from "lucide-react"
 import { Socials } from "./socials"
 
-export function Footer() {
+export function Footer({ locale }: { locale: Locale }) {
+  const { footerContent, personalInfo } = getContent(locale)
+  const t = ui[locale]
   const year = new Date().getFullYear()
 
   return (
@@ -36,14 +38,14 @@ export function Footer() {
         </div>
 
         <div className="md:col-span-2 md:justify-self-end">
-          <p className="eyebrow mb-3 text-muted-foreground">Elsewhere</p>
+          <p className="eyebrow mb-3 text-muted-foreground">{t.elsewhere}</p>
           <Socials />
         </div>
       </div>
 
       <div className="mt-14 flex flex-col gap-2 border-t hairline pt-5 font-mono text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
         <span>© {year} {personalInfo.name}</span>
-        <span>Built with Next.js · No copyrights, bruh.</span>
+        <span>{t.builtWith}</span>
       </div>
     </footer>
   )

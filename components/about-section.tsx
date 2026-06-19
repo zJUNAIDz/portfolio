@@ -1,7 +1,9 @@
-import { aboutContent } from "@/data/portfolio-data"
+import { getContent, ui, type Locale } from "@/lib/i18n"
 import { Section } from "./section"
 
-export function AboutSection() {
+export function AboutSection({ locale }: { locale: Locale }) {
+  const { aboutContent } = getContent(locale)
+  const t = ui[locale]
   return (
     <Section
       id="about"
@@ -20,7 +22,7 @@ export function AboutSection() {
 
           {/* Interests */}
           <div className="pt-2">
-            <p className="eyebrow mb-3 text-muted-foreground">Interests</p>
+            <p className="eyebrow mb-3 text-muted-foreground">{t.interests}</p>
             <div className="flex flex-wrap gap-2">
               {aboutContent.interests.map((item) => (
                 <span

@@ -1,5 +1,6 @@
 "use client"
 
+import { ui } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
@@ -7,16 +8,27 @@ import { usePathname, useRouter } from "next/navigation"
 export function Navigation() {
   const path = usePathname();
   const router = useRouter();
+
+  const locale = path === "/ja" || path.startsWith("/ja/") ? "ja" : "en";
+  const t = ui[locale];
+
+  // The home route is the only localized page; map the locale switch to its
+  // counterpart and keep non-localized routes (devlogs) pointing at /ja home.
+  const switchHref = locale === "ja" ? "/" : "/ja";
+
+  const homeHref = locale === "ja" ? "/ja" : "/";
+  const homeActive = path === "/" || path === "/ja";
+
   const navItems = [
-    { label: "Home", href: "/", active: path === "/" },
-    { label: "Devlog", href: "/devlogs", active: path.startsWith("/devlogs") },
+    { label: t.navHome, href: homeHref, active: homeActive },
+    { label: t.navDevlog, href: "/devlogs", active: path.startsWith("/devlogs") },
   ]
 
   return (
     <nav className="sticky top-0 z-50 border-b hairline bg-background/80 backdrop-blur-sm">
       <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-6 sm:px-10">
         <Link
-          href="/"
+          href={homeHref}
           className="font-mono text-sm font-medium tracking-tight"
         >
           zjunaidz<span className="text-muted-foreground">.me</span>
@@ -29,10 +41,10 @@ export function Navigation() {
               item.active ? "text-foreground" : "text-muted-foreground"
             )
 
-            if (item.label === "Devlog") {
+            if (item.label === t.navDevlog) {
               return (
                 <a
-                  key={item.label}
+                  key={item.href}
                   href={item.href}
                   onClick={(e) => {
                     e.preventDefault()
@@ -52,11 +64,19 @@ export function Navigation() {
             }
 
             return (
-              <Link key={item.label} href={item.href} className={className}>
+              <Link key={item.href} href={item.href} className={className}>
                 {item.label}
               </Link>
             )
           })}
+
+          <Link
+            href={switchHref}
+            aria-label={t.switchToAria}
+            className="border hairline px-2 py-1 font-mono text-xs tracking-widest text-muted-foreground transition-colors hover:border-foreground hover:text-foreground"
+          >
+            {t.switchTo}
+          </Link>
         </div>
       </div>
     </nav>

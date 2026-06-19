@@ -1,8 +1,10 @@
-import { projectsContent } from "@/data/portfolio-data"
+import { getContent, ui, type Locale } from "@/lib/i18n"
 import { ArrowUpRight, Github } from "lucide-react"
 import { Section } from "./section"
 
-export function ProjectsSection() {
+export function ProjectsSection({ locale }: { locale: Locale }) {
+  const { projectsContent } = getContent(locale)
+  const t = ui[locale]
   return (
     <Section
       id="projects"
@@ -33,7 +35,7 @@ export function ProjectsSection() {
                   className="inline-flex items-center gap-2 font-mono text-xs text-foreground/70 transition-colors hover:text-foreground"
                 >
                   <Github className="h-3.5 w-3.5" />
-                  Source
+                  {t.source}
                 </a>
                 {project.demo && (
                   <a
@@ -43,7 +45,7 @@ export function ProjectsSection() {
                     className="group inline-flex items-center gap-2 font-mono text-xs text-foreground/70 transition-colors hover:text-foreground"
                   >
                     <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    Live demo
+                    {t.liveDemo}
                   </a>
                 )}
               </div>

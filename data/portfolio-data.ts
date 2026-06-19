@@ -73,13 +73,13 @@ export const aboutContent = {
   // 1–2 tight paragraphs, confident with personality.
   bio: [
     "I'm a recent Information Technology grad from the University of Mumbai (8.38 CGPI) who fell hard for the backend. Most people see the UI; I think about what's happening behind it — the queue draining jobs, the transaction holding a write together, the worker recovering from a crash without losing state.",
-    "At Slaab.ai I architected the backend of an AI SEO platform from scratch and learned what \"production-bound\" actually demands. The rest of the time I'm on Linux breaking and fixing my own setup, chipping away at Japanese (JLPT N5), and grinding LeetCode while pretending it's fun.",
+    "At Slaab.ai I architected the backend of an AI SEO platform from scratch and learned what \"production-bound\" actually demands. The rest of the time I'm on Linux breaking and fixing my own setup, chipping away at Japanese (JLPT N3), and grinding LeetCode while pretending it's fun.",
   ],
   facts: [
     { label: "Based in", value: "Mumbai, India" },
     { label: "Focus", value: "Backend systems · async job processing · APIs" },
     { label: "Daily driver", value: "Linux (Fedora) · Neovim-curious" },
-    { label: "Learning", value: "日本語 — JLPT N5" },
+    { label: "Learning", value: "日本語 — JLPT N3" },
     { label: "Education", value: "BSc IT, University of Mumbai · 8.38 CGPI" },
   ],
   interests: [

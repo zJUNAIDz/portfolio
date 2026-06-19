@@ -1,7 +1,8 @@
-import { experienceContent } from "@/data/portfolio-data"
+import { getContent, type Locale } from "@/lib/i18n"
 import { Section } from "./section"
 
-export function ExperienceSection() {
+export function ExperienceSection({ locale }: { locale: Locale }) {
+  const { experienceContent } = getContent(locale)
   return (
     <Section
       id="experience"

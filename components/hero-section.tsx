@@ -1,9 +1,11 @@
-import { heroContent, personalInfo } from "@/data/portfolio-data"
+import { getContent, ui, type Locale } from "@/lib/i18n"
 import { ArrowUpRight } from "lucide-react"
 import Link from "next/link"
 import { Socials } from "./socials"
 
-export function HeroSection() {
+export function HeroSection({ locale }: { locale: Locale }) {
+  const { heroContent, personalInfo } = getContent(locale)
+  const t = ui[locale]
   const year = new Date().getFullYear()
 
   return (
@@ -33,11 +35,11 @@ export function HeroSection() {
       {/* Spec rows */}
       <dl className="mt-8 grid max-w-lg grid-cols-1 gap-x-10 font-mono text-xs sm:grid-cols-2">
         <div className="flex items-baseline justify-between gap-4 border-b hairline py-2">
-          <dt className="text-muted-foreground">LOCATION</dt>
+          <dt className="text-muted-foreground">{t.location}</dt>
           <dd>{personalInfo.location}</dd>
         </div>
         <div className="flex items-baseline justify-between gap-4 border-b hairline py-2">
-          <dt className="text-muted-foreground">COORD</dt>
+          <dt className="text-muted-foreground">{t.coord}</dt>
           <dd>{personalInfo.coords}</dd>
         </div>
       </dl>
@@ -58,7 +60,7 @@ export function HeroSection() {
           target="_blank"
           className="group inline-flex items-center gap-2 border border-foreground bg-foreground px-5 py-2.5 font-mono text-xs uppercase tracking-widest text-background transition-colors hover:bg-transparent hover:text-foreground"
         >
-          View résumé
+          {t.viewResume}
           <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </Link>
         <Socials />

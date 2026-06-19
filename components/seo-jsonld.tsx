@@ -1,9 +1,10 @@
 "use client"
 //* This one is vibe coded (does it really help in SEO it's just a fluff?)
-import { personalInfo, skillsContent } from "@/data/portfolio-data"
+import { getContent, type Locale } from "@/lib/i18n"
 import Script from "next/script"
 
-export function SeoJsonLd() {
+export function SeoJsonLd({ locale = "en" }: { locale?: Locale }) {
+  const { personalInfo, skillsContent } = getContent(locale)
   const sameAs = [
     personalInfo.github,
     personalInfo.linkedin,
