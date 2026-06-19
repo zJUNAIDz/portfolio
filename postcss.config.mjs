@@ -28,4 +28,6 @@ if (isProd) {
   );
 }
 
-export default { plugins };
+const config = { plugins };
+
+export default config;
