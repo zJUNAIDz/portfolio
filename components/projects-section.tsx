@@ -1,5 +1,6 @@
 import { getContent, ui, type Locale } from "@/lib/i18n"
-import { ArrowUpRight, Github } from "lucide-react"
+import { ArrowUpRight } from "lucide-react"
+import { Github } from "@/components/icons"
 import { Section } from "./section"
 
 export function ProjectsSection({ locale }: { locale: Locale }) {
