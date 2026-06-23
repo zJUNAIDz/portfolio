@@ -5,7 +5,6 @@ import { Socials } from "./socials"
 export function Footer({ locale }: { locale: Locale }) {
   const { footerContent, personalInfo } = getContent(locale)
   const t = ui[locale]
-  const year = new Date().getFullYear()
 
   return (
     <footer id="contact" className="px-6 py-14 sm:px-10 md:py-20">
@@ -41,11 +40,6 @@ export function Footer({ locale }: { locale: Locale }) {
           <p className="eyebrow mb-3 text-muted-foreground">{t.elsewhere}</p>
           <Socials />
         </div>
-      </div>
-
-      <div className="mt-14 flex flex-col gap-2 border-t hairline pt-5 font-mono text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-        <span>© {year} {personalInfo.name}</span>
-        <span>{t.builtWith}</span>
       </div>
     </footer>
   )
