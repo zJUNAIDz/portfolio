@@ -229,6 +229,30 @@ export const projectsContent = {
     },
     {
       id: "002",
+      title: "auditd",
+      subtitle: "Tamper-evident, multi-tenant audit logging as a service",
+      period: "Jun 2026",
+      summary:
+        "A self-hostable HTTP service that records audit events into an append-only, cryptographically verifiable trail. The goal isn't just \"what happened?\" but \"can I trust that this record is complete and unaltered?\" — the question a plain log table quietly fails.",
+      highlights: [
+        "Every event is linked to the previous one through an HMAC-SHA256 hash chain (hash = HMAC(event ‖ prev_hash)) keyed with a per-tenant secret, so altering, deleting, or reordering even one row breaks every link that follows. A single verification call re-walks the chain and pinpoints the exact event where trust was lost — a genuine fit for SOC 2 / HIPAA / PCI-DSS.",
+        "Multi-tenant from the ground up: each tenant gets its own API key, HMAC secret, and fully isolated chain. Tenant provisioning sits behind an admin route, and API-key lookups are cached for 5 minutes so auth doesn't cost a DB round-trip per request.",
+        "Split write path for low ingestion latency: the handler drops the payload into an in-memory buffered queue and returns 202 immediately, while a background worker pool computes the chain position and persists. Per-tenant PostgreSQL advisory locks keep a single tenant's chain strictly ordered while different tenants write fully in parallel — no global lock.",
+        "Defense in depth: the events table is append-only at the database level via PostgreSQL RULEs that reject every UPDATE/DELETE, so even a buggy migration can't mutate history. Workers retry with exponential backoff, and shutdown drains in-flight requests and the queue before exit.",
+        "Rich filtering by actor, action, resource, type, and time range with pagination, plus row-by-row streaming exports in CSV and JSONL/NDJSON that dump a year of history in constant memory regardless of row count.",
+      ],
+      tech: [
+        "Go 1.26",
+        "Gin",
+        "PostgreSQL 18",
+        "pgx/v5",
+        "sqlc",
+        "golang-migrate",
+      ],
+      github: "https://github.com/zjunaidz/auditd",
+    },
+    {
+      id: "003",
       title: "Notion Lite",
       subtitle: "Collaborative document workspace",
       period: "Nov 2023 – Dec 2023",
@@ -252,7 +276,7 @@ export const projectsContent = {
       demo: "https://potion.zjunaidz.me",
     },
     {
-      id: "003",
+      id: "004",
       title: "Game Explorer",
       subtitle: "Game-discovery SPA over the RAWG API",
       period: "Apr 2023 – Jun 2023",
@@ -276,7 +300,7 @@ export const projectsContent = {
       demo: "https://igdb.zjunaidz.me",
     },
     {
-      id: "004",
+      id: "005",
       title: "Go REST API",
       subtitle: "Learning Go, the systems way",
       period: "2024",
@@ -289,7 +313,7 @@ export const projectsContent = {
       github: "https://github.com/zjunaidz/gin-rest-api",
     },
     {
-      id: "005",
+      id: "006",
       title: "Redis Rate Limiter",
       subtitle: "Published npm library · token bucket in Lua",
       period: "2025",
